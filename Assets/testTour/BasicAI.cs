@@ -23,16 +23,17 @@ public class BasicAI : MonoBehaviour
 
         cible = GameObject.FindGameObjectWithTag("Ennemi");
         Vector3 dir =Vector3.RotateTowards(transform.forward, cible.transform.position - transform.position, 5*Time.deltaTime, 0.0f);
-        transform.rotation = Quaternion.LookRotation(dir);
-
-        if (currTime - lastShot >1)
+        transform.LookAt(cible.transform);
+        //transform.rotation = Quaternion.LookRotation(dir);
+        print(cible.transform.position);
+        if (currTime - lastShot >0.2f)
         {
             lastShot = currTime;
             b = Instantiate(balle);
             b.transform.position = transform.position;
-
-            b.GetComponent<Rigidbody>().AddForce(dir*1000);
-            Destroy(b, 2);
+            b.transform.position = new Vector3(b.transform.position.x + Mathf.Sin(transform.rotation.y)/(2*Mathf.PI), b.transform.position.y, b.transform.position.z + Mathf.Cos(transform.rotation.y) / (2 * Mathf.PI));
+            b.GetComponent<Rigidbody>().AddForce(transform.forward*500);
+            Destroy(b, 4);
         }
     }
 }
