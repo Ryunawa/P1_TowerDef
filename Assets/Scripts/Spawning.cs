@@ -9,8 +9,14 @@ public class Spawning : MonoBehaviour
 {
     public int compteur = 0;
     public GameObject ennemy;
+    public static Spawning spawnManager;
+
     private Transform spawnerPos;
     float time;
+    GameObject copieEnnemy;
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,22 +24,43 @@ public class Spawning : MonoBehaviour
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
         spawnerPos = transform;
         time = Time.time;
+
+        StartCoroutine("Spawn");
     }
 
     // Update is called once per frame
     void Update()
     {
-        float currTime = Time.time;
-        GameObject copieEnnemy;
-            if (compteur < 10 && currTime - time > 1)
+        
+    }
+
+    IEnumerator Spawn()
+    {
+        while (true)
+        {
+            while (compteur < 10)
             {
-                copieEnnemy = Instantiate(ennemy);
-                copieEnnemy.transform.position = spawnerPos.position;
-                copieEnnemy.GetComponent<RoadToGoal>().spawnerSous = this.gameObject;
+                    copieEnnemy = Instantiate(ennemy);
+                    copieEnnemy.transform.position = spawnerPos.position;
+                    copieEnnemy.GetComponent<RoadToGoal>().spawnerSous = this.gameObject;
 
+                    yield return new WaitForSeconds(0.5f);
 
-                time = currTime;
-                compteur++;
+                    compteur++;
             }
+            yield return new WaitForSeconds(15);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+    }
+
+
+    IEnumerator WaitSpawn()
+    {
+        new WaitForSeconds(20);
+        yield return Spawn();
     }
 }

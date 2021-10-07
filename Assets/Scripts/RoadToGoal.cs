@@ -21,13 +21,16 @@ public class RoadToGoal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // if the distance between the ennemy and the goal is under 0.2, the agent is destroyed
         if (agent.remainingDistance < 0.2)
         {
-            spawnerSous.GetComponent<Spawning>().compteur--;
+            Destroy(gameObject);
             print(spawnerSous.GetComponent<Spawning>().compteur);
-            Destroy(this.gameObject);
-            print("C'est bon, c'est arrive");
-            
         }
+    }
+
+    private void OnDestroy()
+    {
+        spawnerSous.GetComponent<Spawning>().compteur--;
     }
 }
