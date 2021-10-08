@@ -36,11 +36,14 @@ public class RoadToGoal : MonoBehaviour
         hp -= i;
         print(hp);
         if (hp <= 0)
+        {
+
+            Destroy(gameObject);
+        }
+    }
 
     private void OnDestroy()
-    {
-            Destroy(this.gameObject);
-        }
+    {        
         spawnerSous.GetComponent<Spawning>().compteur--;
     }
 }
