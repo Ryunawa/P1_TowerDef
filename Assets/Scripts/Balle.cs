@@ -21,7 +21,7 @@ public class Balle : MonoBehaviour
         GameObject touche = collision.gameObject;
         if (touche.CompareTag("Ennemi"))
         {
-            touche.GetComponent<Ennemi>().att(dmg);
+            touche.GetComponent<RoadToGoal>().att(dmg);
             Destroy(gameObject);
         }
     }

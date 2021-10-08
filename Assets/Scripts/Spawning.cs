@@ -44,10 +44,8 @@ public class Spawning : MonoBehaviour
                     copieEnnemy = Instantiate(ennemy);  // Create a new ennemy
                     copieEnnemy.transform.position = spawnerPos.position;  // Set the ennemy spawn
                     copieEnnemy.GetComponent<RoadToGoal>().spawnerSous = this.gameObject;  //Allow to soustrate to the count
-
-                    yield return new WaitForSeconds(0.5f);  // Let 0.5 seconds between two spawn
-
                     compteur++;
+                    yield return new WaitForSeconds(0.5f);  // Let 0.5 seconds between two spawn
             }
             yield return new WaitForSeconds(15);
         }
@@ -58,10 +56,4 @@ public class Spawning : MonoBehaviour
         StopAllCoroutines();
     }
 
-
-    IEnumerator WaitSpawn()
-    {
-        new WaitForSeconds(20);
-        yield return Spawn();
-    }
 }

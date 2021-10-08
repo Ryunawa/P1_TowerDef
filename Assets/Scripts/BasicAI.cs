@@ -7,7 +7,7 @@ public class BasicAI : MonoBehaviour
     float lastShot;
     float atkSpd=0.2f;
     float range;
-    float shotSpd=2500;
+    float shotSpd=1000;
     float dmg;
 
     public GameObject balle;
@@ -23,6 +23,7 @@ public class BasicAI : MonoBehaviour
     {
         GameObject b;
         GameObject cible;
+        Vector3 dir;
         float currTime = Time.time;
         cible = GameObject.FindGameObjectWithTag("Ennemi");
         if(cible == null) { return; }
@@ -32,8 +33,10 @@ public class BasicAI : MonoBehaviour
             lastShot = currTime;
             b = Instantiate(balle, transform.position,transform.rotation);
             b.GetComponent<Balle>().dmg = 1;
-            b.GetComponent<Rigidbody>().AddForce(transform.forward*shotSpd);
-            Destroy(b, 5);
+            b.transform.Translate(new Vector3(0, 0.7f, 0));
+            dir = (cible.transform.position - b.transform.position).normalized;
+            b.GetComponent<Rigidbody>().AddForce(dir * shotSpd);
+            Destroy(b, 2);
         }
     }
 
