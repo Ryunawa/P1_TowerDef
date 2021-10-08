@@ -5,6 +5,10 @@ using UnityEngine;
 public class BasicAI : MonoBehaviour
 {
     float lastShot;
+    float atkSpd=0.2f;
+    float range;
+    float shotSpd=2500;
+    float dmg;
 
     public GameObject balle;
 
@@ -20,20 +24,18 @@ public class BasicAI : MonoBehaviour
         GameObject b;
         GameObject cible;
         float currTime = Time.time;
-
         cible = GameObject.FindGameObjectWithTag("Ennemi");
-        Vector3 dir =Vector3.RotateTowards(transform.forward, cible.transform.position - transform.position, 5*Time.deltaTime, 0.0f);
-        transform.LookAt(cible.transform);
-        //transform.rotation = Quaternion.LookRotation(dir);
-        print(cible.transform.position);
-        if (currTime - lastShot >0.2f)
+        if(cible == null) { return; }
+        transform.LookAt(new Vector3(cible.transform.position.x,transform.position.y,cible.transform.position.z));
+        if (currTime - lastShot >atkSpd)
         {
             lastShot = currTime;
-            b = Instantiate(balle);
-            b.transform.position = transform.position;
-            b.transform.position = new Vector3(b.transform.position.x + Mathf.Sin(transform.rotation.y)/(2*Mathf.PI), b.transform.position.y, b.transform.position.z + Mathf.Cos(transform.rotation.y) / (2 * Mathf.PI));
-            b.GetComponent<Rigidbody>().AddForce(transform.forward*500);
-            Destroy(b, 4);
+            b = Instantiate(balle, transform.position,transform.rotation);
+            b.GetComponent<Balle>().dmg = 1;
+            b.GetComponent<Rigidbody>().AddForce(transform.forward*shotSpd);
+            Destroy(b, 5);
         }
     }
+
+
 }
