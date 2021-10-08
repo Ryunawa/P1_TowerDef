@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class towerPlace : MonoBehaviour
+public class TowerPlacement : MonoBehaviour
 {
     public GameObject tower;
     GameObject copieTower;
@@ -15,11 +15,16 @@ public class towerPlace : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.Mouse0) && (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask)))
-        //{
-            //copieTower = Instantiate(tower);
-            
-        //}
+    {      
+    
     }
+
+    private void OnMouseDown()
+    {
+        copieTower = Instantiate(tower);
+        copieTower.transform.position = transform.position;
+
+        print("Tourelle créée !");
+    }
+
 }
