@@ -38,11 +38,11 @@ public class Spawning : MonoBehaviour
         {
             while (compteur < 10)
             {
-                    copieEnnemy = Instantiate(ennemy);
-                    copieEnnemy.transform.position = spawnerPos.position;
-                    copieEnnemy.GetComponent<RoadToGoal>().spawnerSous = this.gameObject;
+                    copieEnnemy = Instantiate(ennemy);  // Create a new ennemy
+                    copieEnnemy.transform.position = spawnerPos.position;  // Set the ennemy spawn
+                    copieEnnemy.GetComponent<RoadToGoal>().spawnerSous = this.gameObject;  //Allow to soustrate to the count
 
-                    yield return new WaitForSeconds(0.5f);
+                    yield return new WaitForSeconds(0.5f);  // Let 0.5 seconds between two spawn
 
                     compteur++;
             }
