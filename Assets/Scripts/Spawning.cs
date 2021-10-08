@@ -39,7 +39,7 @@ public class Spawning : MonoBehaviour
     {
         while (true)
         {
-            while (compteur < 10)
+            while (compteur < 15)
             {
                     copieEnnemy = Instantiate(ennemy);  // Create a new ennemy
                     copieEnnemy.transform.position = spawnerPos.position;  // Set the ennemy spawn

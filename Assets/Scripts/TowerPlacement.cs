@@ -10,17 +10,18 @@ public class TowerPlacement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
-    {      
-    
+    {
+
     }
 
     private void OnMouseDown()
     {
+        Destroy(copieTower);
         copieTower = Instantiate(tower);
         copieTower.transform.position = transform.position;
         copieTower.transform.Translate(new Vector3(0, 0.6f, 0));
@@ -28,4 +29,12 @@ public class TowerPlacement : MonoBehaviour
         print("Tourelle créée !");
     }
 
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            Destroy(copieTower);
+            print("tourelle détruite");
+        }
+    }
 }

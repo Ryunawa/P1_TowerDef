@@ -39,6 +39,4 @@ public class BasicAI : MonoBehaviour
             Destroy(b, 2);
         }
     }
-
-
 }
