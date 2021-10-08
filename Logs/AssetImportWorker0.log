@@ -1578,3 +1578,51 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 301.150984 seconds.
+  path: Assets/New Material.mat
+  artifactKey: Guid(5f98cb78131460e47924e0add9b75770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/New Material.mat using Guid(5f98cb78131460e47924e0add9b75770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d7f04dbc41abd0185411a1463235988') in 0.038845 seconds 
+  Import took 0.040837 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.132569 seconds.
+  path: Assets/Materials
+  artifactKey: Guid(05f6e257fae8d604099c7a9fa0b704a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials using Guid(05f6e257fae8d604099c7a9fa0b704a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10a8f82f38ff38d1304a6ee5189bce2f') in 0.001164 seconds 
+  Import took 0.003048 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.817083 seconds.
+  path: Assets/testNv1
+  artifactKey: Guid(b7a093c6c62d67b40b06f2a493390566) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/testNv1 using Guid(b7a093c6c62d67b40b06f2a493390566) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2dcbd0bb922b0c6ba4e333ce8d8474b2') in 0.001254 seconds 
+  Import took 0.003070 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.074082 seconds.
+  path: Assets/testNv1/ennemy.prefab
+  artifactKey: Guid(7eb3f676d90df134993a684b9be54913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/testNv1/ennemy.prefab using Guid(7eb3f676d90df134993a684b9be54913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0dcab21e6f29d040205a9db14d80e6d0') in 0.011828 seconds 
+  Import took 0.013735 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/testNv1/Spawner.prefab
+  artifactKey: Guid(16e1cf7a7d584454d9e0879cf466feae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/testNv1/Spawner.prefab using Guid(16e1cf7a7d584454d9e0879cf466feae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07dbdeb0e404ac7bbee7111bf401235d') in 0.002903 seconds 
+  Import took 0.004695 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.602333 seconds.
+  path: Assets/SampleScene/NavMesh.asset
+  artifactKey: Guid(c2bc51e10c831234d9d94f97f3c6f855) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SampleScene/NavMesh.asset using Guid(c2bc51e10c831234d9d94f97f3c6f855) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf5eeda199d9a879e96ade5901c63fee') in 0.001493 seconds 
+  Import took 0.003322 seconds .
+
