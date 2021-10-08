@@ -16,11 +16,10 @@ public class towerPlace : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            copieTower = Instantiate(tower);
-            //copieTower.transform.position = Cursor.
-
-        }
+        //if (Input.GetKeyDown(KeyCode.Mouse0) && (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask)))
+        //{
+            //copieTower = Instantiate(tower);
+            
+        //}
     }
 }
