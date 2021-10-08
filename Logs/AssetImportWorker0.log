@@ -1447,3 +1447,134 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 183.169222 seconds.
+  path: Assets/New Material.mat
+  artifactKey: Guid(5f98cb78131460e47924e0add9b75770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/New Material.mat using Guid(5f98cb78131460e47924e0add9b75770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '852459887990ff6d1539808264afad15') in 0.050355 seconds 
+  Import took 0.052420 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.605725 seconds.
+  path: Assets/Scripts
+  artifactKey: Guid(77d48374c2b8abe45a82a60b7dbe08bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts using Guid(77d48374c2b8abe45a82a60b7dbe08bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a63d62cb7ac54ac0323bd3509f7d910') in 0.001411 seconds 
+  Import took 0.003200 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.308079 seconds.
+  path: Assets/Scripts/RoadToGoal.cs
+  artifactKey: Guid(ede4cea2385a62e4d833a11e705b3451) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RoadToGoal.cs using Guid(ede4cea2385a62e4d833a11e705b3451) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec55f1cb0e2684a48a62fbcbda632017') in 0.011205 seconds 
+  Import took 0.012945 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 396.564498 seconds.
+  path: Assets/Scripts/RoadToGoal.cs
+  artifactKey: Guid(ede4cea2385a62e4d833a11e705b3451) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RoadToGoal.cs using Guid(ede4cea2385a62e4d833a11e705b3451) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73ea0cab7a490365346a56a2f597ed11') in 0.001515 seconds 
+  Import took 0.003684 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 27.883806 seconds.
+  path: Assets/Scripts/RoadToGoal.cs
+  artifactKey: Guid(ede4cea2385a62e4d833a11e705b3451) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RoadToGoal.cs using Guid(ede4cea2385a62e4d833a11e705b3451) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0a2cf0127181377110dc686c893a949') in 0.001560 seconds 
+  Import took 0.003988 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.140892 seconds.
+  path: Assets/Scripts/RoadToGoal.cs
+  artifactKey: Guid(ede4cea2385a62e4d833a11e705b3451) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RoadToGoal.cs using Guid(ede4cea2385a62e4d833a11e705b3451) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6edf25f28fb924d145a68b4cf9ac7d87') in 0.001631 seconds 
+  Import took 0.003416 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 108.180598 seconds.
+  path: Assets/Materials/Terrain Color.mat
+  artifactKey: Guid(38c1fd89a1cf8424eb119df6a92eef2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Terrain Color.mat using Guid(38c1fd89a1cf8424eb119df6a92eef2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e928d655befe39edc27bf92a06273b2') in 0.006928 seconds 
+  Import took 0.008860 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/Materials/Walls Color.mat
+  artifactKey: Guid(27fd90ac25e87e74699676ebca9aaef2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Walls Color.mat using Guid(27fd90ac25e87e74699676ebca9aaef2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20d28abb5ec5a17639a47994be160af1') in 0.006422 seconds 
+  Import took 0.008186 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000206 seconds.
+  path: Assets/Materials/TicTac Color.mat
+  artifactKey: Guid(1f862ec0868bc56409df424335881303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/TicTac Color.mat using Guid(1f862ec0868bc56409df424335881303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30e4e146c721b7759ef38276157b5775') in 0.006919 seconds 
+  Import took 0.018163 seconds .
+
+========================================================================
+Received Prepare
+The file 'UserSettings/EditorUserSettings.asset' seems to have merge conflicts. Please open it in a text editor and fix the merge.
+Trying to reload asset but can't find object on disk
+Registering precompiled user dll's ...
+Registered in 0.001859 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.24 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.639 seconds
+Domain Reload Profiling:
+	ReloadAssembly (639ms)
+		BeginReloadAssembly (76ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (3ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (24ms)
+		EndReloadAssembly (520ms)
+			LoadAssemblies (56ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (169ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (203ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (53ms)
+				ProcessInitializeOnLoadAttributes (139ms)
+				ProcessInitializeOnLoadMethodAttributes (3ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.24 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1446 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.3 MB.
+System memory in use after: 83.8 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 1984.
+Total: 2.308500 ms (FindLiveObjects: 0.141400 ms CreateObjectMapping: 0.049200 ms MarkObjects: 1.866500 ms  DeleteObjects: 0.249800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 

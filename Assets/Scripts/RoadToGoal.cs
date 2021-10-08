@@ -15,17 +15,17 @@ public class RoadToGoal : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        agent.destination = goal.position;
+        agent.destination = goal.position;  // Set the destination to the ennemy 
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        // if the distance between the ennemy and the goal is under 0.2, the agent is destroyed
+        // If the distance between the ennemy and the goal is under 0.2, the agent is destroyed
         if (agent.remainingDistance < 0.2)
         {
-            spawnerSous.GetComponent<Spawning>().compteur--;
+            Destroy(gameObject);  // Destroy the ennemy
             print(spawnerSous.GetComponent<Spawning>().compteur);
             Destroy(this.gameObject);
             
@@ -36,8 +36,11 @@ public class RoadToGoal : MonoBehaviour
         hp -= i;
         print(hp);
         if (hp <= 0)
-        {
+
+    private void OnDestroy()
+    {
             Destroy(this.gameObject);
         }
+        spawnerSous.GetComponent<Spawning>().compteur--;
     }
 }

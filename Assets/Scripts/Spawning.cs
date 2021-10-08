@@ -8,6 +8,7 @@ using UnityEngine.AI;
 public class Spawning : MonoBehaviour
 {
     public int compteur = 0;
+    public int countSpawn;
     public GameObject ennemy;
     public static Spawning spawnManager;
 
@@ -25,47 +26,38 @@ public class Spawning : MonoBehaviour
         spawnerPos = transform;
         time = Time.time;
 
-        //StartCoroutine("Spawn");
+        StartCoroutine("Spawn");
     }
 
     // Update is called once per frame
     void Update()
     {
-        float currTime = Time.time;
-        if (compteur < 10 && currTime - time > 1)
-        {
-            copieEnnemy = Instantiate(ennemy);
-            copieEnnemy.transform.position = spawnerPos.position;
-            copieEnnemy.GetComponent<RoadToGoal>().spawnerSous = this.gameObject;
-
-            new WaitForSeconds(1);
-            time = currTime;
-            compteur++;
         
-        }
     }
 
     IEnumerator Spawn()
     {
-        float currTime;
-        while (compteur < 10)
+        while (true)
         {
-            currTime = Time.time;
-
-            if (currTime - time < 1)
+            while (compteur < 10)
             {
-                copieEnnemy = Instantiate(ennemy);
-                copieEnnemy.transform.position = spawnerPos.position;
-                copieEnnemy.GetComponent<RoadToGoal>().spawnerSous = this.gameObject;
+                    copieEnnemy = Instantiate(ennemy);  // Create a new ennemy
+                    copieEnnemy.transform.position = spawnerPos.position;  // Set the ennemy spawn
+                    copieEnnemy.GetComponent<RoadToGoal>().spawnerSous = this.gameObject;  //Allow to soustrate to the count
 
-                new WaitForSeconds(1);
-                time = currTime;
-                compteur++;
+                    yield return new WaitForSeconds(0.5f);  // Let 0.5 seconds between two spawn
+
+                    compteur++;
             }
+            yield return new WaitForSeconds(15);
         }
-            yield return WaitSpawn();
-            
     }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+    }
+
 
     IEnumerator WaitSpawn()
     {
