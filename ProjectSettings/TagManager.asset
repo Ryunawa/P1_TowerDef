@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ennemi
+  - Tower Plateform
   layers:
   - Default
   - TransparentFX
