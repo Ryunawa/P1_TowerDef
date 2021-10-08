@@ -10,8 +10,10 @@ public class Spawning : MonoBehaviour
     public int compteur = 0;
     public int countSpawn;
     public GameObject ennemy;
+    public static Spawning spawnManager;
 
     private Transform spawnerPos;
+    float time;
     GameObject copieEnnemy;
 
 
@@ -22,6 +24,7 @@ public class Spawning : MonoBehaviour
     {
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
         spawnerPos = transform;
+        time = Time.time;
 
         StartCoroutine("Spawn");
     }

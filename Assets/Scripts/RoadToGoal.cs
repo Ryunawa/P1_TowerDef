@@ -10,6 +10,7 @@ public class RoadToGoal : MonoBehaviour
     NavMeshAgent agent;
     public GameObject spawnerSous;
 
+    int hp = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,11 +27,23 @@ public class RoadToGoal : MonoBehaviour
         {
             Destroy(gameObject);  // Destroy the ennemy
             print(spawnerSous.GetComponent<Spawning>().compteur);
+            Destroy(this.gameObject);
+            
+        }
+    }
+    public void att(int i)
+    {
+        hp -= i;
+        print(hp);
+        if (hp <= 0)
+        {
+
+            Destroy(gameObject);
         }
     }
 
     private void OnDestroy()
-    {
+    {        
         spawnerSous.GetComponent<Spawning>().compteur--;
     }
 }
