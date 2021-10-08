@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class towerPlace : MonoBehaviour
 {
+    public GameObject tower;
+    GameObject copieTower;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,9 +16,11 @@ public class towerPlace : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Mouse0) && )
-        //{
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            copieTower = Instantiate(tower);
+            //copieTower.transform.position = Cursor.
 
-        //}
+        }
     }
 }
