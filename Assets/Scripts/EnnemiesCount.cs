@@ -19,7 +19,6 @@ public class EnnemiesCount : MonoBehaviour
     void Update()
     {
         countUpdate.text = count.GetComponent<Spawning>().compteur.ToString();
-        print("text au pif " + count.GetComponent<Spawning>().compteur.ToString());
     }
 }
 
