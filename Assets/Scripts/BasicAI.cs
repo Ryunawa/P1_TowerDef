@@ -36,7 +36,7 @@ public class BasicAI : MonoBehaviour
             b.transform.Translate(new Vector3(0, 0.7f, 0));
             dir = (cible.transform.position - b.transform.position).normalized;
             b.GetComponent<Rigidbody>().AddForce(dir * shotSpd);
-            Destroy(b, 2);
+            Destroy(b, 1);
         }
     }
 }

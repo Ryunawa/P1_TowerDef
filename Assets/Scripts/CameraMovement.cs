@@ -15,7 +15,6 @@ public class CameraMovement : MonoBehaviour
 
     void Update()
     {
-
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             transform.position += Vector3.right * speed * Time.deltaTime;

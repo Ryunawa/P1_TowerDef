@@ -26,7 +26,6 @@ public class TowerPlacement : MonoBehaviour
         copieTower.transform.position = transform.position;
         copieTower.transform.Translate(new Vector3(0, 0.6f, 0));
         copieTower.GetComponentInChildren<SphereCollider>().radius = 8;
-        print("Tourelle créée !");
     }
 
     private void OnMouseOver()
@@ -34,7 +33,6 @@ public class TowerPlacement : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             Destroy(copieTower);
-            print("tourelle détruite");
         }
     }
 }

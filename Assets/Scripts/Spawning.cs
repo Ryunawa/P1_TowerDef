@@ -7,13 +7,14 @@ using UnityEngine.AI;
 
 public class Spawning : MonoBehaviour
 {
-    public int compteur = 0;
-    public int countSpawn;
+    public int enemyCount = 0;
+    public static int waveCount = 0;
     public GameObject ennemy;
     public static Spawning spawnManager;
+    public bool spawnEnCours;
+    public float enemyMax = 10;
 
-    private Transform spawnerPos;
-    float time;
+    private Transform _spawnerPos;
     GameObject copieEnnemy;
 
 
@@ -23,9 +24,7 @@ public class Spawning : MonoBehaviour
     void Start()
     {
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        spawnerPos = transform;
-        time = Time.time;
-
+        _spawnerPos = transform;
         StartCoroutine("Spawn");
     }
 
@@ -37,17 +36,26 @@ public class Spawning : MonoBehaviour
 
     IEnumerator Spawn()
     {
+        int i;
         while (true)
         {
-            while (compteur < 15)
+            waveCount++;
+            spawnEnCours = true;
+            for (i = 0; i < enemyMax ; i++)
             {
                     copieEnnemy = Instantiate(ennemy);  // Create a new ennemy
-                    copieEnnemy.transform.position = spawnerPos.position;  // Set the ennemy spawn
+                    copieEnnemy.transform.position = _spawnerPos.position;  // Set the ennemy spawn
                     copieEnnemy.GetComponent<RoadToGoal>().spawnerSous = this.gameObject;  //Allow to soustrate to the count
-                    compteur++;
-                    yield return new WaitForSeconds(0.5f);  // Let 0.5 seconds between two spawn
+                    enemyCount++;
+
+                yield return new WaitForSeconds(0.5f);  // Let 0.5 seconds between two spawn
             }
-            yield return new WaitForSeconds(15);
+            spawnEnCours = false;
+
+            enemyMax *= 1.2f; 
+
+
+            yield return new WaitForSeconds(10);
         }
     }
 

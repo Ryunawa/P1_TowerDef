@@ -1,19 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class RoadToGoal : MonoBehaviour
 {
+    NavMeshAgent agent;
 
     public Transform goal;
-    NavMeshAgent agent;
     public GameObject spawnerSous;
 
-    int hp = 5;
+
+    private int _hpEnemy = 10;
+
     // Start is called before the first frame update
     void Start()
     {
+        //textGoWin.GetComponent<TextMeshProUGUI>();
+        //textGoLoose.GetComponent<TextMeshProUGUI>();
+
         agent = GetComponent<NavMeshAgent>();
         agent.destination = goal.position;  // Set the destination to the ennemy 
 
@@ -22,21 +28,13 @@ public class RoadToGoal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // If the distance between the ennemy and the goal is under 0.2, the agent is destroyed
-        if (agent.remainingDistance < 0.2)
-        {
-            Destroy(gameObject);  // Destroy the ennemy
-            print(spawnerSous.GetComponent<Spawning>().compteur);
-            Destroy(this.gameObject);
-            
-        }
+  
     }
     public void att(int i)
     {
-        hp -= i;
-        if (hp <= 0)
+        _hpEnemy -= i;
+        if (_hpEnemy <= 0)
         {
-
             Destroy(gameObject);
         }
     }
@@ -45,7 +43,7 @@ public class RoadToGoal : MonoBehaviour
     {
         if (spawnerSous != null)
         {
-            spawnerSous.GetComponent<Spawning>().compteur--;
+            spawnerSous.GetComponent<Spawning>().enemyCount--;
         }
     }
 }
