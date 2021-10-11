@@ -7,7 +7,7 @@ using UnityEngine.AI;
 
 public class Spawning : MonoBehaviour
 {
-    public int enemyCount = 0;
+    public float enemyCount = 0;
     public static int waveCount = 0;
     public GameObject ennemy;
     public static Spawning spawnManager;
@@ -41,21 +41,27 @@ public class Spawning : MonoBehaviour
         {
             waveCount++;
             spawnEnCours = true;
+            
+            
+                enemyCount = enemyMax;
+            
+
             for (i = 0; i < enemyMax ; i++)
             {
                     copieEnnemy = Instantiate(ennemy);  // Create a new ennemy
                     copieEnnemy.transform.position = _spawnerPos.position;  // Set the ennemy spawn
                     copieEnnemy.GetComponent<RoadToGoal>().spawnerSous = this.gameObject;  //Allow to soustrate to the count
-                    enemyCount++;
 
                 yield return new WaitForSeconds(0.5f);  // Let 0.5 seconds between two spawn
             }
             spawnEnCours = false;
-
-            enemyMax *= 1.2f; 
-
-
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(6);
+            enemyMax *= 1.2f;
+            yield return new WaitForSeconds(4);
+            while(enemyCount > 0)
+            {
+            }
+            yield return new WaitForSeconds(5);
         }
     }
 

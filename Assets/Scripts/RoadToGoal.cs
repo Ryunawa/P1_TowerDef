@@ -17,9 +17,6 @@ public class RoadToGoal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //textGoWin.GetComponent<TextMeshProUGUI>();
-        //textGoLoose.GetComponent<TextMeshProUGUI>();
-
         agent = GetComponent<NavMeshAgent>();
         agent.destination = goal.position;  // Set the destination to the ennemy 
 
