@@ -25,7 +25,7 @@ public class TowerPlacement : MonoBehaviour
         copieTower = Instantiate(tower);
         copieTower.transform.position = transform.position;
         copieTower.transform.Translate(new Vector3(0, 0.6f, 0));
-        copieTower.GetComponentInChildren<SphereCollider>().radius = 8;
+        copieTower.GetComponentInChildren<SphereCollider>().radius = tower.GetComponent<BasicAI>().range;
     }
 
     private void OnMouseOver()
