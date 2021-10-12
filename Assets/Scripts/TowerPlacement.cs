@@ -21,11 +21,17 @@ public class TowerPlacement : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Destroy(copieTower);
-        copieTower = Instantiate(tower);
-        copieTower.transform.position = transform.position;
-        copieTower.transform.Translate(new Vector3(0, 0.6f, 0));
-        copieTower.GetComponentInChildren<SphereCollider>().radius = tower.GetComponent<BasicAI>().range;
+        if (copieTower == null)
+        {
+            copieTower = Instantiate(tower);
+            copieTower.transform.position = transform.position;
+            copieTower.transform.Translate(new Vector3(0, 0.6f, 0));
+            copieTower.GetComponentInChildren<SphereCollider>().radius = tower.GetComponent<BasicAI>().range;
+        }
+        else
+        {
+            print(copieTower.GetComponent<BasicAI>().getStats());
+        }
     }
 
     private void OnMouseOver()

@@ -18,7 +18,7 @@ public class EnemiesCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _countEnemyUpdate.text = enemyCount.GetComponent<Spawning>().enemyCount.ToString();
+        _countEnemyUpdate.text = Mathf.Round(enemyCount.GetComponent<Spawning>().enemyCount).ToString();
     }
 }
 
