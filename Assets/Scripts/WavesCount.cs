@@ -3,23 +3,20 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class EnnemiesCount : MonoBehaviour
+public class WavesCount : MonoBehaviour
 {
-
-    private TextMeshProUGUI countUpdate;
-    public GameObject count;
+    private TextMeshProUGUI _countWaveUpdate;
+    public GameObject waveCount;
 
     // Start is called before the first frame update
     void Start()
     {
-        countUpdate = GetComponent<TextMeshProUGUI>();
+        _countWaveUpdate = GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        countUpdate.text = count.GetComponent<Spawning>().compteur.ToString();
+        _countWaveUpdate.text = Spawning.waveCount.ToString();
     }
 }
-
-
