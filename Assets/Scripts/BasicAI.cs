@@ -6,11 +6,13 @@ public class BasicAI : MonoBehaviour
 {
     float lastShot;
     float atkSpd=0.2f;
-    float range = 10;
+    public float range = 5;
     float shotSpd=1000;
     float dmg;
 
-    public GameObject cible;
+    public List<GameObject> ciblePossible = new List<GameObject>();
+
+    GameObject cible;
     
     public GameObject balle;
 
@@ -26,8 +28,12 @@ public class BasicAI : MonoBehaviour
 
         GameObject b;
         Vector3 dir;
-        float currTime = Time.time;               
-        if (cible == null) {return;}
+        float currTime = Time.time;
+        while (ciblePossible.Count > 0 && ciblePossible[0] == null)
+            ciblePossible.RemoveAt(0);
+        if (ciblePossible.Count == 0)
+            return;
+        cible = ciblePossible[0];
         transform.LookAt(new Vector3(cible.transform.position.x, transform.position.y, cible.transform.position.z));
         if (currTime - lastShot > atkSpd)
         {

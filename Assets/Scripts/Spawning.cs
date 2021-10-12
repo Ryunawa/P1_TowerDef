@@ -12,7 +12,7 @@ public class Spawning : MonoBehaviour
     public GameObject ennemy;
     public static Spawning spawnManager;
     public bool spawnEnCours;
-    public float enemyMax = 10;
+    public float enemyMax = 20;
 
     private Transform _spawnerPos;
     GameObject copieEnnemy;

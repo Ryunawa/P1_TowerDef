@@ -16,22 +16,15 @@ public class RayonTour : MonoBehaviour
         
     }
 
-    
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        GameObject newTarget = other.gameObject;
-        
-        if ( newTarget.CompareTag("Ennemi") && (GetComponentInParent<BasicAI>().cible == null || GetComponentInParent<BasicAI>().cible.GetComponent<RoadToGoal>().agent.remainingDistance > newTarget.GetComponent<RoadToGoal>().agent.remainingDistance))
-        {
-            GetComponentInParent<BasicAI>().cible = newTarget;
-        }   
+        if(other.CompareTag("Ennemi"))
+            GetComponentInParent<BasicAI>().ciblePossible.Add(other.gameObject);
     }
-
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject == GetComponentInParent<BasicAI>().cible)
-        {
-            GetComponentInParent<BasicAI>().cible = null;
-        }
+        GetComponentInParent<BasicAI>().ciblePossible.Remove(other.gameObject);
     }
+
+
 }
