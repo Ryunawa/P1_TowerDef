@@ -26,12 +26,12 @@ public class Objectif : MonoBehaviour
             Time.timeScale = 0;
         }
 
-        if (Spawning.waveCount == 2 && !win.GetComponent<Spawning>().spawnEnCours && win.GetComponent<Spawning>().enemyCount == 0)
+        /*if (Spawning.waveCount == 2 && !win.GetComponent<Spawning>().spawnEnCours && win.GetComponent<Spawning>().enemyCount == 0)
         {
             textGoLoose.SetActive(false);
             textGoWin.SetActive(true);
             Time.timeScale = 0;
-        }
+        }*/
     }
 
     private void OnTriggerEnter(Collider other)

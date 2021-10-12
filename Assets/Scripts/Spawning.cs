@@ -13,6 +13,7 @@ public class Spawning : MonoBehaviour
     public static Spawning spawnManager;
     public bool spawnEnCours;
     public float enemyMax = 10;
+    public float spawnTmp = 0.5f;
 
     private Transform _spawnerPos;
     GameObject copieEnnemy;
@@ -37,12 +38,15 @@ public class Spawning : MonoBehaviour
     IEnumerator Spawn()
     {
         int i;
+        
 
         while (true)
         {
             waveCount++;
             spawnEnCours = true;  
             enemyCount = enemyMax;
+           
+            yield return new WaitForSeconds(5);
 
             for (i = 0; i < enemyMax ; i++)
             {
@@ -50,7 +54,7 @@ public class Spawning : MonoBehaviour
                 copieEnnemy.transform.position = _spawnerPos.position;  // Set the ennemy spawn
                 copieEnnemy.GetComponent<RoadToGoal>().spawnerSous = this.gameObject;  //Allow to soustrate to the count
 
-                yield return new WaitForSeconds(0.3f);  // Let 0.5 seconds between two spawn
+                yield return new WaitForSeconds(spawnTmp);  // Let 0.5 seconds between two spawn
             }
 
             spawnEnCours = false;
@@ -60,7 +64,7 @@ public class Spawning : MonoBehaviour
                 yield return new WaitForSeconds(0.1f);
             }
             enemyMax *= 1.2f;
-            yield return new WaitForSeconds(5);
+            spawnTmp *= 0.9f;
         }
     }
 
