@@ -37,30 +37,29 @@ public class Spawning : MonoBehaviour
     IEnumerator Spawn()
     {
         int i;
+
         while (true)
         {
             waveCount++;
-            spawnEnCours = true;
-            
-            
-                enemyCount = enemyMax;
-            
+            spawnEnCours = true;  
+            enemyCount = enemyMax;
 
             for (i = 0; i < enemyMax ; i++)
             {
-                    copieEnnemy = Instantiate(ennemy);  // Create a new ennemy
-                    copieEnnemy.transform.position = _spawnerPos.position;  // Set the ennemy spawn
-                    copieEnnemy.GetComponent<RoadToGoal>().spawnerSous = this.gameObject;  //Allow to soustrate to the count
+                copieEnnemy = Instantiate(ennemy);  // Create a new ennemy
+                copieEnnemy.transform.position = _spawnerPos.position;  // Set the ennemy spawn
+                copieEnnemy.GetComponent<RoadToGoal>().spawnerSous = this.gameObject;  //Allow to soustrate to the count
 
-                yield return new WaitForSeconds(0.5f);  // Let 0.5 seconds between two spawn
+                yield return new WaitForSeconds(0.3f);  // Let 0.5 seconds between two spawn
             }
+
             spawnEnCours = false;
-            yield return new WaitForSeconds(6);
-            enemyMax *= 1.2f;
-            yield return new WaitForSeconds(4);
+
             while(enemyCount > 0)
             {
+                yield return new WaitForSeconds(0.1f);
             }
+            enemyMax *= 1.2f;
             yield return new WaitForSeconds(5);
         }
     }
