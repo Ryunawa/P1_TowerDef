@@ -7,7 +7,7 @@ public class RoadToGoal : MonoBehaviour
 {
 
     public Transform goal;
-    NavMeshAgent agent;
+    public NavMeshAgent agent;
     public GameObject spawnerSous;
 
     int hp = 5;
@@ -26,8 +26,6 @@ public class RoadToGoal : MonoBehaviour
         if (agent.remainingDistance < 0.2)
         {
             Destroy(gameObject);  // Destroy the ennemy
-            print(spawnerSous.GetComponent<Spawning>().compteur);
-            Destroy(this.gameObject);
             
         }
     }

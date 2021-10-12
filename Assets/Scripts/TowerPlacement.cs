@@ -21,12 +21,13 @@ public class TowerPlacement : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Destroy(copieTower);
-        copieTower = Instantiate(tower);
-        copieTower.transform.position = transform.position;
-        copieTower.transform.Translate(new Vector3(0, 0.6f, 0));
-        copieTower.GetComponentInChildren<SphereCollider>().radius = 8;
-        print("Tourelle créée !");
+        if (copieTower == null ) {
+            copieTower = Instantiate(tower);
+            copieTower.transform.position = transform.position;
+            copieTower.transform.Translate(new Vector3(0, 0.6f, 0));
+            copieTower.GetComponentInChildren<SphereCollider>().radius = 6;
+            print("Tourelle créée !");
+        }
     }
 
     private void OnMouseOver()

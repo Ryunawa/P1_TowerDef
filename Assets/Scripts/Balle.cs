@@ -24,5 +24,8 @@ public class Balle : MonoBehaviour
             touche.GetComponent<RoadToGoal>().att(dmg);
             Destroy(gameObject);
         }
+        else {           
+            Destroy(gameObject); 
+        }
     }
 }
