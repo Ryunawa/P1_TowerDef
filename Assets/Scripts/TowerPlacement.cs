@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TowerPlacement : MonoBehaviour
 {
-    public GameObject tower;
+    public List<GameObject> towerList;
     GameObject copieTower;
 
     // Start is called before the first frame update
@@ -23,10 +23,10 @@ public class TowerPlacement : MonoBehaviour
     {
         if (copieTower == null)
         {
-            copieTower = Instantiate(tower);
+            copieTower = Instantiate(towerList[0]);
             copieTower.transform.position = transform.position;
-            copieTower.transform.Translate(new Vector3(0, 0.6f, 0));
-            copieTower.GetComponentInChildren<SphereCollider>().radius = tower.GetComponent<BasicAI>().range;
+            copieTower.transform.Translate(new Vector3(0, 0, 0));
+            copieTower.GetComponentInChildren<SphereCollider>().radius = towerList[0].GetComponent<BasicAI>().range;
         }
         else
         {
