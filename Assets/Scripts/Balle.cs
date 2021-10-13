@@ -30,13 +30,8 @@ public class Balle : MonoBehaviour
             case 1:
                 if (touche.CompareTag("Ennemi"))
                 {
-                    touche.GetComponent<RoadToGoal>().att(dmg);
-                    parentTower.GetComponent<BasicAI>().addXP(1);
-                    Destroy(gameObject);
-                }
-                else
-                {
-                    Destroy(gameObject);
+                    touche.GetComponent<EnemyHealth>().DealtDamage(dmg);
+                    parentTower.GetComponent<BasicAI>().addXP(1); 
                 }
                 break;
 
@@ -46,14 +41,15 @@ public class Balle : MonoBehaviour
                 {
                     if (c.CompareTag("Ennemi"))
                     {
-                        c.GetComponent<RoadToGoal>().att(dmg);
+
+                        c.GetComponent<EnemyHealth>().DealtDamage(dmg);
                         parentTower.GetComponent<BasicAI>().addXP(1);
-                        Destroy(gameObject);
                     }
                 }
                 break;
             default:
                 break;
         }
+        Destroy(gameObject);
     }
 }

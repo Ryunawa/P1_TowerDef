@@ -12,7 +12,7 @@ public class BasicAI : MonoBehaviour
 
     int level = 0;
     int xp = 0;
-    int xpmax = 10;
+    int xpmax = 100;
 
     public List<GameObject> ciblePossible = new List<GameObject>();
 
@@ -45,7 +45,7 @@ public class BasicAI : MonoBehaviour
             lastShot = currTime;
             b = Instantiate(balle, transform.position, transform.rotation);
             composant = b.GetComponent<Balle>();
-            composant.dmg = 1;
+            composant.dmg = 10;
             composant.parentTower = gameObject;
             composant.type = 2;
             b.transform.Translate(new Vector3(0, 0.7f, 0));
