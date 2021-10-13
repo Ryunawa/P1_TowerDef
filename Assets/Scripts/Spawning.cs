@@ -63,7 +63,7 @@ public class Spawning : MonoBehaviour
             {
                 yield return new WaitForSeconds(0.1f);
             }
-            enemyMax *= 1.2f;
+            enemyMax += 10;
             spawnTmp *= 0.9f;
         }
     }
