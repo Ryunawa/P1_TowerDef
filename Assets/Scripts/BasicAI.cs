@@ -12,7 +12,7 @@ public class BasicAI : MonoBehaviour
 
     int level = 0;
     int xp = 0;
-    int xpmax = 100;
+    int xpmax = 10;
 
     public List<GameObject> ciblePossible = new List<GameObject>();
 
@@ -61,6 +61,7 @@ public class BasicAI : MonoBehaviour
         if (xp == xpmax)
         {
             level++;
+            xpmax *= 2;
             xp = 0;
             atkSpd /= 1.2f;
             range *= 1.2f;
