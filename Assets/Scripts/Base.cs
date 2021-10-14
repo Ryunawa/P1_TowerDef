@@ -25,7 +25,6 @@ public class Base : MonoBehaviour
         if (touch.CompareTag("Ennemi"))
         {
             hpBase--;
-            print("hp de la base :" + hpBase);
             Destroy(other.gameObject); // Destroy the enemy
 
             objective.MenuEndGame();

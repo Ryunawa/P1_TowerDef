@@ -7,8 +7,10 @@ public class Objective : MonoBehaviour
 {
     public GameObject textGoWin;
     public GameObject textGoLoose;
-    public GameObject win;
-
+    public void Start()
+    {
+        gameObject.SetActive(false);
+    }
     public void MenuEndGame()
     {
         if (Base.hpBase == 0)
@@ -19,9 +21,8 @@ public class Objective : MonoBehaviour
             Time.timeScale = 0;
         }
 
-        if (Spawning.waveCount >= 3 && !Spawning.spawnEnCours && Spawning.enemyCount <= 0)
+        if (Spawning.waveCount >= 6 && !Spawning.spawnEnCours && Spawning.enemyCount <= 0)
         {
-            print("c'est gg wp");
             gameObject.SetActive(true);
             textGoLoose.SetActive(false);
             textGoWin.SetActive(true);
@@ -32,6 +33,7 @@ public class Objective : MonoBehaviour
     public void Restart()
     {
         Spawning.waveCount = 0;
+        Base.hpBase = 10;
         Time.timeScale = 1;
         SceneManager.LoadScene("Lv1");
     }

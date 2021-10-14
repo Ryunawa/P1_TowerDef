@@ -391,6 +391,7 @@ MonoBehaviour:
   maxHealth: 100
   healthBarUI: {fileID: 8891875390068864894}
   slider: {fileID: 5677502493035324074}
+  mainCamera: {fileID: 3784039632685761228, guid: a79a40a959bd14c48afd240e4bc9ed23, type: 3}
   goal: {fileID: 5736838729274919759, guid: 6e87985c6086af04d83cbb7edc853e1d, type: 3}
   spawnerSous: {fileID: 3293739730691086115, guid: 16e1cf7a7d584454d9e0879cf466feae, type: 3}
 --- !u!1 &8756774155515973172

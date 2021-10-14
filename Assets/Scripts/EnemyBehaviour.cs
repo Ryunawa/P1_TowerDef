@@ -11,6 +11,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public GameObject healthBarUI;
     public Slider slider;
+    public Camera mainCamera;
 
     UnityEngine.AI.NavMeshAgent agent;
 
@@ -24,15 +25,13 @@ public class EnemyBehaviour : MonoBehaviour
         slider.value = CalculateHealth();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.destination = goal.position;  // Set the destination to the ennemy 
-
-
     }
 
     private void Update()
     {
         slider.value = CalculateHealth();
         transform.localScale = transform.localScale * reduceRate;
-
+        healthBarUI.transform.rotation = new Quaternion(0, mainCamera.transform.rotation.y, mainCamera.transform.rotation.z, 0);
     }
 
     float CalculateHealth()
@@ -46,12 +45,9 @@ public class EnemyBehaviour : MonoBehaviour
 
         if (health <= 0)
         {
-            Animator a = GetComponentInChildren<Animator>();
-            a.SetBool("Vivant", false);
             Destroy(agent);
-            gameObject.tag = "Untagged";
-            Destroy(gameObject, 2);
-            //StartCoroutine("mort");
+            reduceRate = 0.98f;
+            Destroy(gameObject, 0.25f);
         }
 
         if (health > maxHealth)
@@ -72,9 +68,5 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
-    IEnumerator mort()
-    {
-        yield return new WaitForSeconds(1);
-        reduceRate = 0.99f;
-    }
+
 }
