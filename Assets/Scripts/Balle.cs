@@ -8,6 +8,7 @@ public class Balle : MonoBehaviour
     public GameObject parentTower;
     public int type;
     public float rayon = 1;
+    public int peircing;
 
     Collider[] CiblePossible;
 
@@ -30,7 +31,7 @@ public class Balle : MonoBehaviour
             case 1:
                 if (touche.CompareTag("Ennemi"))
                 {
-                    touche.GetComponent<EnemyHealth>().DealtDamage(dmg);
+                    touche.GetComponent<EnemyBehaviour>().DealtDamage(dmg);
                     parentTower.GetComponent<BasicAI>().addXP(1); 
                 }
                 break;
@@ -42,14 +43,19 @@ public class Balle : MonoBehaviour
                     if (c.CompareTag("Ennemi"))
                     {
 
-                        c.GetComponent<EnemyHealth>().DealtDamage(dmg);
+                        c.GetComponent<EnemyBehaviour>().DealtDamage(dmg);
                         parentTower.GetComponent<BasicAI>().addXP(1);
                     }
                 }
+                Destroy(gameObject);
                 break;
             default:
                 break;
         }
-        Destroy(gameObject);
+        if (peircing <= 0)
+        {
+            Destroy(gameObject);
+            peircing--;
+        }
     }
 }

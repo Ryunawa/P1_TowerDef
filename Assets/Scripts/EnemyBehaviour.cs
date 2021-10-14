@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyBehaviour : MonoBehaviour
 {
     public float health;
     public float maxHealth;
@@ -11,19 +12,27 @@ public class EnemyHealth : MonoBehaviour
     public GameObject healthBarUI;
     public Slider slider;
 
+    UnityEngine.AI.NavMeshAgent agent;
+
+    public Transform goal;
+    public GameObject spawnerSous;
+
+    float reduceRate = 1;
     private void Start()
     {
         health = maxHealth;
         slider.value = CalculateHealth();
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        agent.destination = goal.position;  // Set the destination to the ennemy 
 
-       
+
     }
 
     private void Update()
     {
         slider.value = CalculateHealth();
+        transform.localScale = transform.localScale * reduceRate;
 
-        
     }
 
     float CalculateHealth()
@@ -39,8 +48,10 @@ public class EnemyHealth : MonoBehaviour
         {
             Animator a = GetComponentInChildren<Animator>();
             a.SetBool("Vivant", false);
-           // agent.speed = 0;
+            Destroy(agent);
+            gameObject.tag = "Untagged";
             Destroy(gameObject, 2);
+           // StartCoroutine("mort");
         }
 
         if (health > maxHealth)
@@ -52,5 +63,18 @@ public class EnemyHealth : MonoBehaviour
         {
             healthBarUI.SetActive(true);
         }
+    }
+        private void OnDestroy()
+    {
+        if (spawnerSous != null)
+        {
+            spawnerSous.GetComponent<Spawning>().enemyCount--;
+        }
+    }
+
+    IEnumerator mort()
+    {
+        yield return new WaitForSeconds(1);
+        reduceRate = 0.99f;
     }
 }

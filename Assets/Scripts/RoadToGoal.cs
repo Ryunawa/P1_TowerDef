@@ -32,7 +32,7 @@ public class RoadToGoal : MonoBehaviour
         _hpEnemy -= i;
         if (_hpEnemy <= 0)
         {
-            Destroy(gameObject);
+            
         }
     }
 

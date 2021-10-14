@@ -249,9 +249,10 @@ GameObject:
   - component: {fileID: 8578898319133382473}
   - component: {fileID: 8578898319133382472}
   - component: {fileID: 8578898319133382475}
-  - component: {fileID: 8578898319133382479}
   - component: {fileID: 4158964988965112854}
+  - component: {fileID: 8578898319133382479}
   - component: {fileID: 670963720731197475}
+  - component: {fileID: 7971491416420457861}
   m_Layer: 10
   m_Name: enemy
   m_TagString: Ennemi
@@ -360,20 +361,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &8578898319133382479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8578898319133382453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ede4cea2385a62e4d833a11e705b3451, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goal: {fileID: 5736838729274919759, guid: 6e87985c6086af04d83cbb7edc853e1d, type: 3}
-  spawnerSous: {fileID: 3293739730691086115, guid: 16e1cf7a7d584454d9e0879cf466feae, type: 3}
 --- !u!54 &4158964988965112854
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -390,6 +377,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8578898319133382479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8578898319133382453}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede4cea2385a62e4d833a11e705b3451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goal: {fileID: 5736838729274919759, guid: 6e87985c6086af04d83cbb7edc853e1d, type: 3}
+  spawnerSous: {fileID: 3293739730691086115, guid: 16e1cf7a7d584454d9e0879cf466feae, type: 3}
 --- !u!114 &670963720731197475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,7 +398,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8578898319133382453}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2f45f504fd6fac42be95a96d1ec9789, type: 3}
   m_Name: 
@@ -406,6 +407,24 @@ MonoBehaviour:
   maxHealth: 100
   healthBarUI: {fileID: 8891875390068864894}
   slider: {fileID: 5677502493035324074}
+--- !u!114 &7971491416420457861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8578898319133382453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26dca80882a8f0544aed03342b41a86b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
+  healthBarUI: {fileID: 8891875390068864894}
+  slider: {fileID: 5677502493035324074}
+  goal: {fileID: 5736838729274919759, guid: 6e87985c6086af04d83cbb7edc853e1d, type: 3}
+  spawnerSous: {fileID: 3293739730691086115, guid: 16e1cf7a7d584454d9e0879cf466feae, type: 3}
 --- !u!1 &8756774155515973172
 GameObject:
   m_ObjectHideFlags: 0
