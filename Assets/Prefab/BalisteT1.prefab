@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &7431221648016099691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452990633686282278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968a50b53e219214b95214ae7c5cf33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 5
+  ciblePossible: []
+  balle: {fileID: 1741720431910626968, guid: 8101dfe2a5fe0d64a9a71ddab262d2fd, type: 3}
 --- !u!1 &1944046238848558327
 GameObject:
   m_ObjectHideFlags: 0
@@ -27,11 +42,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1944046238848558327}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
-  m_Father: {fileID: 8976644945648385161}
-  m_RootOrder: 3
+  m_Father: {fileID: 2261334662228437660}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &3155151408353699823
 SphereCollider:
@@ -83,7 +98,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8976644945648385161}
-  - component: {fileID: 193814809202179759}
   m_Layer: 2
   m_Name: BalisteT1
   m_TagString: Untagged
@@ -105,25 +119,9 @@ Transform:
   - {fileID: 1022579384585494931}
   - {fileID: 2261334662228437660}
   - {fileID: 811433617469281776}
-  - {fileID: 8780874960485878411}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &193814809202179759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5333447313697517453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 968a50b53e219214b95214ae7c5cf33c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 5
-  ciblePossible: []
-  balle: {fileID: 1741720431910626968, guid: 8101dfe2a5fe0d64a9a71ddab262d2fd, type: 3}
 --- !u!1 &8585269715788862558
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,6 +356,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a70cf68ea4e69a4e9f4550d891d3c53, type: 3}
+--- !u!1 &1452990633686282278 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7a70cf68ea4e69a4e9f4550d891d3c53, type: 3}
+  m_PrefabInstance: {fileID: 1795641686217067895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2261334662228437660 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7a70cf68ea4e69a4e9f4550d891d3c53, type: 3}

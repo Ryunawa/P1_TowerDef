@@ -48,7 +48,8 @@ public class BasicAI : MonoBehaviour
             composant.dmg = 10;
             composant.parentTower = gameObject;
             composant.type = 2;
-            b.transform.Translate(new Vector3(0, 0.7f, 0));
+            b.transform.Translate(new Vector3(0, 0.6f, 0));
+            b.transform.LookAt(cible.transform.position);
             dir = (cible.transform.position - b.transform.position).normalized;
             b.GetComponent<Rigidbody>().AddForce(dir * shotSpd);
             Destroy(b, 1);
