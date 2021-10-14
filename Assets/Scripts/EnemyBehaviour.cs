@@ -51,7 +51,7 @@ public class EnemyBehaviour : MonoBehaviour
             Destroy(agent);
             gameObject.tag = "Untagged";
             Destroy(gameObject, 2);
-           // StartCoroutine("mort");
+            //StartCoroutine("mort");
         }
 
         if (health > maxHealth)
@@ -68,7 +68,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (spawnerSous != null)
         {
-            spawnerSous.GetComponent<Spawning>().enemyCount--;
+            Spawning.enemyCount--;
         }
     }
 
