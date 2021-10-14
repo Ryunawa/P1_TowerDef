@@ -11,6 +11,9 @@ public class RoadToGoal : MonoBehaviour
     public Transform goal;
     public GameObject spawnerSous;
 
+
+    private int _hpEnemy = 10;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,12 +27,20 @@ public class RoadToGoal : MonoBehaviour
     {
   
     }
+    public void att(int i)
+    {
+        _hpEnemy -= i;
+        if (_hpEnemy <= 0)
+        {
+            
+        }
+    }
 
     private void OnDestroy()
     {
         if (spawnerSous != null)
         {
-            Spawning.enemyCount--;
+            spawnerSous.GetComponent<Spawning>().enemyCount--;
         }
     }
 }
