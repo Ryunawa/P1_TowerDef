@@ -10,22 +10,20 @@ public class EnemyHealth : MonoBehaviour
 
     public GameObject healthBarUI;
     public Slider slider;
+    public Camera mainCamera;
 
     private void Start()
     {
         health = maxHealth;
         slider.value = CalculateHealth();
-
-       
     }
 
     private void Update()
     {
         slider.value = CalculateHealth();
-
-        
+        healthBarUI.transform.rotation = new Quaternion(0, mainCamera.transform.rotation.y, mainCamera.transform.rotation.z, 0);
     }
-
+  
     float CalculateHealth()
     {
         return health / maxHealth;

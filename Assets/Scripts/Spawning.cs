@@ -7,13 +7,14 @@ using UnityEngine.AI;
 
 public class Spawning : MonoBehaviour
 {
-    public float enemyCount = 0;
+    public static float enemyCount = 0;
     public static int waveCount = 0;
     public GameObject ennemy;
     public static Spawning spawnManager;
-    public bool spawnEnCours;
-    public float enemyMax = 10;
+    public static bool spawnEnCours;
+    public float enemyMax = 0;
     public float spawnTmp = 0.5f;
+    public Objective objective;
 
     private Transform _spawnerPos;
     GameObject copieEnnemy;
@@ -43,10 +44,11 @@ public class Spawning : MonoBehaviour
         while (true)
         {
             waveCount++;
+            enemyMax += 5;
             spawnEnCours = true;  
             enemyCount = enemyMax;
            
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(2);
 
             for (i = 0; i < enemyMax ; i++)
             {
@@ -63,8 +65,12 @@ public class Spawning : MonoBehaviour
             {
                 yield return new WaitForSeconds(0.1f);
             }
-            enemyMax += 10;
+            objective.MenuEndGame();
+
+            
             spawnTmp *= 0.9f;
+
+            yield return new WaitForSeconds(3);
         }
     }
 

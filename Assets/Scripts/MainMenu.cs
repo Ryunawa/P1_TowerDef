@@ -15,7 +15,6 @@ public class MainMenu : MonoBehaviour
     {
         print("QUIT");
         Application.Quit();
-
     }
 
 }

@@ -406,6 +406,7 @@ MonoBehaviour:
   maxHealth: 100
   healthBarUI: {fileID: 8891875390068864894}
   slider: {fileID: 5677502493035324074}
+  mainCamera: {fileID: 3784039632685761228, guid: a79a40a959bd14c48afd240e4bc9ed23, type: 3}
 --- !u!1 &8756774155515973172
 GameObject:
   m_ObjectHideFlags: 0
