@@ -7957,6 +7957,10 @@ PrefabInstance:
       value: Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 3293739730691086124, guid: 16e1cf7a7d584454d9e0879cf466feae, type: 3}
+      propertyPath: ennemy
+      value: 
+      objectReference: {fileID: 6236306289244437586, guid: b5bb6892a9b339c42b19000c702f08a4, type: 3}
+    - target: {fileID: 3293739730691086124, guid: 16e1cf7a7d584454d9e0879cf466feae, type: 3}
       propertyPath: objective
       value: 
       objectReference: {fileID: 1822361451}
@@ -7970,11 +7974,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3293739730691086125, guid: 16e1cf7a7d584454d9e0879cf466feae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.96
+      value: 0.421
       objectReference: {fileID: 0}
     - target: {fileID: 3293739730691086125, guid: 16e1cf7a7d584454d9e0879cf466feae, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.58
+      value: 0.784
       objectReference: {fileID: 0}
     - target: {fileID: 3293739730691086125, guid: 16e1cf7a7d584454d9e0879cf466feae, type: 3}
       propertyPath: m_LocalRotation.w

@@ -32,7 +32,8 @@ public class Balle : MonoBehaviour
                 if (touche.CompareTag("Ennemi"))
                 {
                     touche.GetComponent<EnemyBehaviour>().DealtDamage(dmg);
-                    parentTower.GetComponent<BasicAI>().addXP(1); 
+                    if(parentTower!= null)
+						parentTower.GetComponent<BasicAI>().addXP(1); 
                 }
                 break;
 
@@ -44,7 +45,8 @@ public class Balle : MonoBehaviour
                     {
 
                         c.GetComponent<EnemyBehaviour>().DealtDamage(dmg);
-                        parentTower.GetComponent<BasicAI>().addXP(1);
+                        if(parentTower!= null)
+							parentTower.GetComponent<BasicAI>().addXP(1);
                     }
                 }
                 Destroy(gameObject);

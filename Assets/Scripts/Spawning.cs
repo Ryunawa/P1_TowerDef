@@ -9,12 +9,14 @@ public class Spawning : MonoBehaviour
 {
     public static float enemyCount = 0;
     public static int waveCount = 0;
-    public GameObject ennemy;
+    public GameObject[] ennemies = new GameObject[2];
     public static Spawning spawnManager;
     public static bool spawnEnCours;
     public float enemyMax = 0;
     public float spawnTmp = 0.5f;
     public Objective objective;
+	int ennemyTypes;
+
 
     private Transform _spawnerPos;
     GameObject copieEnnemy;
@@ -28,6 +30,8 @@ public class Spawning : MonoBehaviour
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
         _spawnerPos = transform;
         StartCoroutine("Spawn");
+		
+		ennemyTypes= ennemies.Length;
     }
 
     // Update is called once per frame
@@ -52,7 +56,7 @@ public class Spawning : MonoBehaviour
 
             for (i = 0; i < enemyMax ; i++)
             {
-                copieEnnemy = Instantiate(ennemy);  // Create a new ennemy
+                copieEnnemy = Instantiate(ennemies[i%ennemyTypes]);  // Create a new ennemy
                 copieEnnemy.transform.position = _spawnerPos.position;  // Set the ennemy spawn
                 copieEnnemy.GetComponent<EnemyBehaviour>().spawnerSous = this.gameObject;  //Allow to soustrate to the count
 
