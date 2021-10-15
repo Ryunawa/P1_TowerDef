@@ -5,43 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class Objective : MonoBehaviour
 {
-    public GameObject textGoWin;
-    public GameObject textGoLoose;
+    public GameObject MenuWin;
+    public GameObject MenuLoose;
+    
     public void Start()
     {
-        gameObject.SetActive(false);
+        MenuWin.SetActive(false);
+        MenuLoose.SetActive(false);
+        
     }
     public void MenuEndGame()
     {
         if (Base.hpBase == 0)
         {
-            gameObject.SetActive(true);
-            textGoWin.SetActive(false);
-            textGoLoose.SetActive(true);
+            MenuLoose.SetActive(true);
             Time.timeScale = 0;
         }
 
         if (Spawning.waveCount >= 6 && !Spawning.spawnEnCours && Spawning.enemyCount <= 0)
         {
-            gameObject.SetActive(true);
-            textGoLoose.SetActive(false);
-            textGoWin.SetActive(true);
+            MenuWin.SetActive(true);
             Time.timeScale = 0;
         }
     }
-
-    public void Restart()
-    {
-        Spawning.waveCount = 0;
-        Base.hpBase = 10;
-        Time.timeScale = 1;
-        SceneManager.LoadScene("Lv1");
-    }
-
-    public void Quit()
-    {
-        print("QUIT");
-        Application.Quit();
-    }
-
 }
