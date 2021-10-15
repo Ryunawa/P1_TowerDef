@@ -15,7 +15,6 @@ public class EnemyBehaviour : MonoBehaviour
 
     UnityEngine.AI.NavMeshAgent agent;
 
-    public Transform goal;
     public GameObject spawnerSous;
 
     float reduceRate = 1;
@@ -24,8 +23,8 @@ public class EnemyBehaviour : MonoBehaviour
         health = maxHealth;
         slider.value = CalculateHealth();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        agent.destination = goal.position;  // Set the destination to the ennemy 
-    }
+        agent.destination = GameObject.FindWithTag("Goal").transform.position; // Set the destination to the ennemy 
+   }
 
     private void Update()
     {
