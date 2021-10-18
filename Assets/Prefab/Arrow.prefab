@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7119938988393770034}
   - component: {fileID: 9207458381106494561}
   m_Layer: 6
-  m_Name: Balle
+  m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,6 +67,7 @@ MonoBehaviour:
   parentTower: {fileID: 0}
   type: 0
   rayon: 1
+  peircing: 0
 --- !u!33 &2606893234046674690
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -94,8 +95,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8067726398312463513, guid: de7ab74a188fab846bb03fb4b2f055d9, type: 3}
-  - {fileID: 7555185752953191562, guid: de7ab74a188fab846bb03fb4b2f055d9, type: 3}
+  - {fileID: 2100000, guid: 4d80b9554f7947f42b21f555e0060f41, type: 2}
+  - {fileID: 2100000, guid: 1677bbcf03f7f1c4d9c5cea975ecd11b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

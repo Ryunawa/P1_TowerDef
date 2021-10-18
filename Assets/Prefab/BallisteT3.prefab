@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6629730105802234542}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BallisteT3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,6 +89,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: towerRound_middleA
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a3cb4c4258064e0478bfdc9f7bb32836, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4607668393258877731, guid: a3cb4c4258064e0478bfdc9f7bb32836, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3cb4c4258064e0478bfdc9f7bb32836, type: 3}
 --- !u!4 &2210844804018973111 stripped
@@ -150,6 +158,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 49f443e457556ce49a213dd43c6beb56, type: 3}
       propertyPath: m_Name
       value: towerRound_topB
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 49f443e457556ce49a213dd43c6beb56, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4607668393258877731, guid: 49f443e457556ce49a213dd43c6beb56, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49f443e457556ce49a213dd43c6beb56, type: 3}
@@ -213,6 +229,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: towerRound_bottomB
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db8b1ba7cabdb5c4d870b4c1d67bbf02, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4607668393258877731, guid: db8b1ba7cabdb5c4d870b4c1d67bbf02, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db8b1ba7cabdb5c4d870b4c1d67bbf02, type: 3}
 --- !u!4 &5478442770571094052 stripped
@@ -271,9 +295,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3868710468543803471, guid: de7ab74a188fab846bb03fb4b2f055d9, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: de7ab74a188fab846bb03fb4b2f055d9, type: 3}
       propertyPath: m_Name
       value: weapon_ballista
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de7ab74a188fab846bb03fb4b2f055d9, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087413553415064497, guid: de7ab74a188fab846bb03fb4b2f055d9, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276442123569471543, guid: de7ab74a188fab846bb03fb4b2f055d9, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de7ab74a188fab846bb03fb4b2f055d9, type: 3}
