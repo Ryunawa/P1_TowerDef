@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MySceneManager : MonoBehaviour
 {
-    public void nextLvl()
+    string nextBuildLvl = "SceneManager.GetActiveScene().buildIndex + 1";
+    public void loadNextLvl()
     {
         Spawning.waveCount = 0;
         Base.hpBase = 10;
         Time.timeScale = 1;
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(nextBuildLvl);
     }
 
     public void Restart()
