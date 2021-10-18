@@ -5,8 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager GM;
+
     public GameObject MenuWin;
     public GameObject MenuLoose;
+    public int money = 0;
+
+    private void Awake()
+    {
+        if(GM != null)
+        {
+            Destroy(GM);
+        }
+        else
+        {
+            GM = this;
+            DontDestroyOnLoad(this);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -15,11 +31,13 @@ public class GameManager : MonoBehaviour
         MenuLoose.SetActive(false);
     }
 
-    // Update is called once per frame
+// Update is called once per frame
     void Update()
     {
         
     }
+
+// Winning and loosing conditions
     public void MenuEndGame()
     {
         if (Base.hpBase == 0)
@@ -35,16 +53,26 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    string nextBuildLvl = "SceneManager.GetActiveScene().buildIndex + 1";
-    public void loadNextLvl()
+    public void GainMoney(int addedMoney)
+    {
+        money += addedMoney;
+    }
+
+
+
+
+
+// Allow us to load the next lvl when you win and click on the right button
+    public void LoadNextLvl()
     {
         Spawning.waveCount = 0;
         Base.hpBase = 10;
         Time.timeScale = 1;
 
-        SceneManager.LoadScene(nextBuildLvl);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+// Allow us to load the same lvl when you loose and click on the right button
     public void Restart()
     {
         Spawning.waveCount = 0;
@@ -54,6 +82,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
     }
 
+// Allow us to load to quit when you click on the right button
     public void Quit()
     {
         print("QUIT");

@@ -30,7 +30,7 @@ public class TowerPlacement : MonoBehaviour
         }
         else
         {
-            print(copieTower.GetComponentInChildren<BasicAI>().getStats());
+            print(copieTower.GetComponentInChildren<TurretAI>().getStats());
         }
     }
 

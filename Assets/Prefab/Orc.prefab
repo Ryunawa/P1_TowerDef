@@ -347,7 +347,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -390,6 +390,7 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   healthBarUI: {fileID: 8891875390068864894}
+  money: 5
   slider: {fileID: 5677502493035324074}
   mainCamera: {fileID: 3784039632685761228, guid: a79a40a959bd14c48afd240e4bc9ed23, type: 3}
   spawnerSous: {fileID: 3293739730691086115, guid: 16e1cf7a7d584454d9e0879cf466feae, type: 3}
