@@ -44,22 +44,24 @@ public class TowerPlacement : MonoBehaviour
 
     public void PlaceBaliste()
     {
-        if (copieTower == null)
+        if (copieTower == null && GameManager.GM.money >= 30)
         {
+            GameManager.GM.money -= 30;
             copieTower = Instantiate(towerList[0]);
             copieTower.transform.position = transform.position;
-            copieTower.GetComponentInChildren<SphereCollider>().radius = towerList[0].GetComponentInChildren<BasicAI>().range;
+            copieTower.GetComponentInChildren<SphereCollider>().radius = towerList[0].GetComponentInChildren<TurretAI>().range;
         }
         c.enabled = false;
     }
 
     public void PlaceCanon()
     {
-        if (copieTower == null)
+        if (copieTower == null && GameManager.GM.money >= 50)
         {
+            GameManager.GM.money -= 50;
             copieTower = Instantiate(towerList[1]);
             copieTower.transform.position = transform.position;
-            copieTower.GetComponentInChildren<SphereCollider>().radius = towerList[0].GetComponentInChildren<BasicAI>().range;
+            copieTower.GetComponentInChildren<SphereCollider>().radius = towerList[0].GetComponentInChildren<TurretAI>().range;
         }
         c.enabled = false;
     }

@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject MenuWin;
     public GameObject MenuLoose;
-    public int money = 0;
+    public int money = 50;
 
     private void Awake()
     {
@@ -20,8 +20,9 @@ public class GameManager : MonoBehaviour
         else
         {
             GM = this;
-            DontDestroyOnLoad(this);
         }
+        money = 50;
+        DontDestroyOnLoad(this);
     }
 
     // Start is called before the first frame update
