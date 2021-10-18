@@ -5,10 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager GM;
+
     public GameObject MenuWin;
     public GameObject MenuLoose;
+    public int money = 0;
 
-// Start is called before the first frame update
+    private void Awake()
+    {
+        if(GM != null)
+        {
+            Destroy(GM);
+        }
+        else
+        {
+            GM = this;
+            DontDestroyOnLoad(this);
+        }
+    }
+
+    // Start is called before the first frame update
     void Start()
     {
         MenuWin.SetActive(false);
@@ -36,6 +52,15 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
         }
     }
+
+    public void GainMoney(int addedMoney)
+    {
+        money += addedMoney;
+    }
+
+
+
+
 
 // Allow us to load the next lvl when you win and click on the right button
     public void LoadNextLvl()

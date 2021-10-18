@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public int dmg;
+    public float dmg;
     public GameObject parentTower;
     public int type;
     public float rayon = 1;

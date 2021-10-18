@@ -6,14 +6,14 @@ public class TurretAI : MonoBehaviour
 {
     float lastShot;
     float atkSpd=0.2f;
-    public float range = 5;
+    public float range = 3;
     float shotSpd=1000;
-    float dmg;
+    float dmg = 10;
     int peircing=0;
 
     int level = 0;
     int xp = 0;
-    int xpmax = 10;
+    int xpmax = 20;
 
     public List<GameObject> ciblePossible = new List<GameObject>();
 
@@ -50,7 +50,7 @@ public class TurretAI : MonoBehaviour
             lastShot = currTime;
             b = Instantiate(balle, transform.position, transform.rotation);
             composant = b.GetComponent<Bullet>();
-            composant.dmg = 10;
+            composant.dmg = dmg;
             composant.parentTower = gameObject;
             composant.type = 2;
             composant.peircing = peircing;
@@ -70,9 +70,8 @@ public class TurretAI : MonoBehaviour
             level++;
             xpmax *= 2;
             xp = 0;
-            atkSpd /= 1.2f;
-            range *= 1.2f;
-            dmg *= 1.2f;
+            atkSpd /= 1.01f;
+            dmg *= 1.1f;
         }
     }
 

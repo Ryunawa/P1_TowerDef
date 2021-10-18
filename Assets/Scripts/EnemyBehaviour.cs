@@ -10,6 +10,7 @@ public class EnemyBehaviour : MonoBehaviour
     public float maxHealth;
 
     public GameObject healthBarUI;
+    public int money;
     public Slider slider;
     public Camera mainCamera;
 
@@ -18,6 +19,7 @@ public class EnemyBehaviour : MonoBehaviour
     public GameObject spawnerSous;
 
     float reduceRate = 1;
+
     private void Start()
     {
         health = maxHealth;
@@ -38,7 +40,7 @@ public class EnemyBehaviour : MonoBehaviour
         return health / maxHealth;
     }
 
-    public void DealtDamage(int dmg)
+    public void DealtDamage(float dmg)
     {
         health -= dmg;
 
@@ -47,6 +49,7 @@ public class EnemyBehaviour : MonoBehaviour
             Destroy(agent);
             reduceRate = 0.98f;
             Destroy(gameObject, 0.25f);
+            
         }
 
         if (health > maxHealth)
@@ -59,8 +62,10 @@ public class EnemyBehaviour : MonoBehaviour
             healthBarUI.SetActive(true);
         }
     }
-        private void OnDestroy()
+    private void OnDestroy()
     {
+        GameManager.GM.GainMoney(money);
+
         if (spawnerSous != null)
         {
             Spawning.enemyCount--;
