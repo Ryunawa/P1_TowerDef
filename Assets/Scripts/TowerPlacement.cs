@@ -26,11 +26,11 @@ public class TowerPlacement : MonoBehaviour
             copieTower = Instantiate(towerList[0]);
             copieTower.transform.position = transform.position;
             copieTower.transform.Translate(new Vector3(0, 0, 0));
-            copieTower.GetComponentInChildren<SphereCollider>().radius = towerList[0].GetComponentInChildren<BasicAI>().range;
+            copieTower.GetComponentInChildren<SphereCollider>().radius = towerList[0].GetComponentInChildren<TurretAI>().range;
         }
         else
         {
-            print(copieTower.GetComponentInChildren<BasicAI>().getStats());
+            print(copieTower.GetComponentInChildren<TurretAI>().getStats());
         }
     }
 

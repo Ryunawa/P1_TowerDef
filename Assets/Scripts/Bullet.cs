@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Balle : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     public int dmg;
     public GameObject parentTower;
@@ -33,7 +33,7 @@ public class Balle : MonoBehaviour
                 {
                     touche.GetComponent<EnemyBehaviour>().DealtDamage(dmg);
                     if(parentTower!= null)
-						parentTower.GetComponent<BasicAI>().addXP(1); 
+						parentTower.GetComponent<TurretAI>().addXP(1); 
                 }
                 break;
 
@@ -46,7 +46,7 @@ public class Balle : MonoBehaviour
 
                         c.GetComponent<EnemyBehaviour>().DealtDamage(dmg);
                         if(parentTower!= null)
-							parentTower.GetComponent<BasicAI>().addXP(1);
+							parentTower.GetComponent<TurretAI>().addXP(1);
                     }
                 }
                 Destroy(gameObject);

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicAI : MonoBehaviour
+public class TurretAI : MonoBehaviour
 {
     float lastShot;
     float atkSpd=0.2f;
@@ -32,20 +32,24 @@ public class BasicAI : MonoBehaviour
     {
 
         GameObject b;
-        Balle composant;
+        Bullet composant;
         Vector3 dir;
         float currTime = Time.time;
+
         while (ciblePossible.Count > 0 && ciblePossible[0] == null)
             ciblePossible.RemoveAt(0);
+
         if (ciblePossible.Count == 0)
             return;
+
         cible = ciblePossible[0];
         transform.LookAt(new Vector3(cible.transform.position.x, transform.position.y, cible.transform.position.z));
+        
         if (currTime - lastShot > atkSpd)
         {
             lastShot = currTime;
             b = Instantiate(balle, transform.position, transform.rotation);
-            composant = b.GetComponent<Balle>();
+            composant = b.GetComponent<Bullet>();
             composant.dmg = 10;
             composant.parentTower = gameObject;
             composant.type = 2;
