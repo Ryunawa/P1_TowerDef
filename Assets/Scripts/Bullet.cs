@@ -25,9 +25,9 @@ public class Bullet : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        GameObject touche = collision.gameObject;
+        GameObject touche = other.gameObject;
         switch (type)
         {
             case 1:
@@ -35,8 +35,8 @@ public class Bullet : MonoBehaviour
                 {
 
                     touche.GetComponent<EnemyBehaviour>().DealtDamage(dmg);
-                    if(parentTower!= null)
-						parentTower.GetComponent<TurretAI>().addXP(1); 
+                    if (parentTower != null)
+                        parentTower.GetComponent<TurretAI>().addXP(1);
                 }
                 break;
 
@@ -44,14 +44,14 @@ public class Bullet : MonoBehaviour
                 Instantiate(part);
                 part.transform.position = transform.position;
                 CiblePossible = Physics.OverlapSphere(transform.position, rayon);
-                foreach(Collider c in CiblePossible)
+                foreach (Collider c in CiblePossible)
                 {
                     if (c.CompareTag("Ennemi"))
                     {
 
                         c.GetComponent<EnemyBehaviour>().DealtDamage(dmg);
-                        if(parentTower!= null)
-							parentTower.GetComponent<TurretAI>().addXP(1);
+                        if (parentTower != null)
+                            parentTower.GetComponent<TurretAI>().addXP(1);
                     }
                 }
                 Destroy(gameObject);
@@ -62,7 +62,8 @@ public class Bullet : MonoBehaviour
         peircing--;
         if (peircing <= 0 || !touche.CompareTag("Ennemi"))
         {
-            Destroy(gameObject); 
+            Destroy(gameObject);
         }
     }
+
 }
