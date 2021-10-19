@@ -42,10 +42,16 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void DealtDamage(float dmg)
     {
+        if(health <= 0)
+        {
+            return;
+        }
+
         health -= dmg;
 
         if (health <= 0)
         {
+            GameManager.GM.GainMoney(money);
             Destroy(agent);
             reduceRate = 0.98f;
             Destroy(gameObject, 0.25f);
@@ -64,8 +70,6 @@ public class EnemyBehaviour : MonoBehaviour
     }
     private void OnDestroy()
     {
-        GameManager.GM.GainMoney(money);
-
         if (spawnerSous != null)
         {
             Spawning.enemyCount--;

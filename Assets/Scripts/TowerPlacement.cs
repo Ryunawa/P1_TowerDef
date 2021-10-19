@@ -6,6 +6,7 @@ public class TowerPlacement : MonoBehaviour
 {
     public List<GameObject> towerList;
     GameObject copieTower;
+    public GameObject moneyError;
     Canvas c;
 
     // Start is called before the first frame update
@@ -14,6 +15,7 @@ public class TowerPlacement : MonoBehaviour
         GetComponentInChildren<Canvas>().worldCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         c = GetComponentInChildren<Canvas>();
         c.enabled = false;
+        moneyError.SetActive(false);
     }
 
     // Update is called once per frame
@@ -51,6 +53,13 @@ public class TowerPlacement : MonoBehaviour
             copieTower.transform.position = transform.position;
             copieTower.GetComponentInChildren<SphereCollider>().radius = towerList[0].GetComponentInChildren<TurretAI>().range;
         }
+        else
+        {
+            moneyError.SetActive(true); // Enable the text so it shows
+            print("pas assez d'argent");
+            delay();
+            moneyError.SetActive(false); // Disable the text so it shows
+        }
         c.enabled = false;
     }
 
@@ -66,4 +75,8 @@ public class TowerPlacement : MonoBehaviour
         c.enabled = false;
     }
 
+    IEnumerator delay()
+    {
+        yield return new WaitForSeconds(5);
+    }
 }

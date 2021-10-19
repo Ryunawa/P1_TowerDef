@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968a50b53e219214b95214ae7c5cf33c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
+  range: 3
   ciblePossible: []
   balle: {fileID: 1714582840137784027, guid: 8116f3313ea414a4a96b85ca0a29f09a, type: 3}
 --- !u!1 &2384136187255461899

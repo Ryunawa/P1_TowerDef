@@ -58,7 +58,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -424,6 +424,7 @@ MonoBehaviour:
   towerList:
   - {fileID: 5333447313697517453, guid: f2a742224996dd749b5e562b6d85d0fe, type: 3}
   - {fileID: 3633183128799367902, guid: 45717f6c8f5b81f409ca958869175769, type: 3}
+  moneyError: {fileID: 0}
 --- !u!33 &450456322562638905
 MeshFilter:
   m_ObjectHideFlags: 0
