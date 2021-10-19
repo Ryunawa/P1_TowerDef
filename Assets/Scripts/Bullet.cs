@@ -54,10 +54,10 @@ public class Bullet : MonoBehaviour
             default:
                 break;
         }
-        if (peircing <= 0)
+        peircing--;
+        if (peircing <= 0 || !touche.CompareTag("Ennemi"))
         {
-            Destroy(gameObject);
-            peircing--;
+            Destroy(gameObject); 
         }
     }
 }

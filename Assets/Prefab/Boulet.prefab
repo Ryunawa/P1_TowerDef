@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2368025941860222102}
   - component: {fileID: 1633991466959708654}
   - component: {fileID: 3846079482428101865}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Boulet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,9 +109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebd66b7b5546b474aa50c4202e433f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 0
+  dmg: 0.5
   parentTower: {fileID: 0}
-  type: 1
+  type: 2
   rayon: 1
   peircing: 0
 --- !u!54 &3846079482428101865
