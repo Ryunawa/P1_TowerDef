@@ -10,6 +10,8 @@ public class Bullet : MonoBehaviour
     public float rayon = 1;
     public int peircing;
 
+    public GameObject part;
+
     Collider[] CiblePossible;
 
     // Start is called before the first frame update
@@ -31,6 +33,7 @@ public class Bullet : MonoBehaviour
             case 1:
                 if (touche.CompareTag("Ennemi"))
                 {
+
                     touche.GetComponent<EnemyBehaviour>().DealtDamage(dmg);
                     if(parentTower!= null)
 						parentTower.GetComponent<TurretAI>().addXP(1); 
@@ -38,6 +41,8 @@ public class Bullet : MonoBehaviour
                 break;
 
             case 2:
+                Instantiate(part);
+                part.transform.position = transform.position;
                 CiblePossible = Physics.OverlapSphere(transform.position, rayon);
                 foreach(Collider c in CiblePossible)
                 {
@@ -54,10 +59,10 @@ public class Bullet : MonoBehaviour
             default:
                 break;
         }
+        peircing--;
         if (peircing <= 0)
         {
             Destroy(gameObject);
-            peircing--;
         }
     }
 }
