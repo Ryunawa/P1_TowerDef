@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 3
+  dmg: 10
+  peircing: 2
   ciblePossible: []
   balle: {fileID: 1741720431910626968, guid: 8101dfe2a5fe0d64a9a71ddab262d2fd, type: 3}
 --- !u!1 &1944046238848558327

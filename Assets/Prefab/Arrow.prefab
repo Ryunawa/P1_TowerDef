@@ -65,7 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 1
   parentTower: {fileID: 0}
-  type: 0
+  type: 1
   rayon: 1
   peircing: 0
   part: {fileID: 5507954068403275570, guid: 65229a37cc3b2e842b74860e59de2c13, type: 3}
@@ -76,7 +76,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741720431910626968}
-  m_Mesh: {fileID: 4019234525060620036, guid: de7ab74a188fab846bb03fb4b2f055d9, type: 3}
+  m_Mesh: {fileID: 4019234525060620036, guid: 7a70cf68ea4e69a4e9f4550d891d3c53, type: 3}
 --- !u!23 &7119938988393770034
 MeshRenderer:
   m_ObjectHideFlags: 0

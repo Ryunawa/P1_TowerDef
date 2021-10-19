@@ -60,9 +60,9 @@ public class Bullet : MonoBehaviour
                 break;
         }
         peircing--;
-        if (peircing <= 0)
+        if (peircing <= 0 || !touche.CompareTag("Ennemi"))
         {
-            Destroy(gameObject);
+            Destroy(gameObject); 
         }
     }
 }
