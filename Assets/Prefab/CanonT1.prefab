@@ -15,8 +15,10 @@ MonoBehaviour:
   range: 3
   dmg: 5
   peircing: 0
+  prix: 50
   ciblePossible: []
   balle: {fileID: 1714582840137784027, guid: 8116f3313ea414a4a96b85ca0a29f09a, type: 3}
+  nextRank: {fileID: 8592753177483685285, guid: 5f1c26dac71be9346a35e6551351ebbb, type: 3}
 --- !u!1 &2384136187255461899
 GameObject:
   m_ObjectHideFlags: 0

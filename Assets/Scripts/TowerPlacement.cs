@@ -1,21 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class TowerPlacement : MonoBehaviour
 {
-    public List<GameObject> towerList;
+    public List<GameObject> basicTowers;
     GameObject copieTower;
     public GameObject moneyError;
-    Canvas c;
+    public GameObject achat;
+    public GameObject upgrade;
+
+    public GameObject balistaButton;
+    public GameObject cannonButton;
 
     // Start is called before the first frame update
     void Start()
     {
         GetComponentInChildren<Canvas>().worldCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        c = GetComponentInChildren<Canvas>();
-        c.enabled = false;
+        achat.SetActive(false);
+        upgrade.SetActive(false);
         moneyError.SetActive(false);
+        balistaButton.GetComponentInChildren<TextMeshProUGUI>().text = basicTowers[0].GetComponentInChildren<TurretAI>().prix.ToString();
+        cannonButton.GetComponentInChildren<TextMeshProUGUI>().text = basicTowers[1].GetComponentInChildren<TurretAI>().prix.ToString();
     }
 
     // Update is called once per frame
@@ -27,12 +34,14 @@ public class TowerPlacement : MonoBehaviour
     {
         if (copieTower == null)
         {
-            c.enabled = true;
+            achat.SetActive(true);
         }
         else
         {
-            print(copieTower.GetComponentInChildren<TurretAI>().getStats());
+            upgrade.GetComponentInChildren<TextMeshProUGUI>().text = copieTower.GetComponentInChildren<TurretAI>().nextRank.GetComponentInChildren<TurretAI>().prix.ToString();
+            upgrade.SetActive(true);
         }
+        StartCoroutine(delay());
     }
 
     private void OnMouseOver()
@@ -43,39 +52,43 @@ public class TowerPlacement : MonoBehaviour
         }
     }
 
-    public void PlaceBaliste()
+    public void PlaceTour(GameObject g)
     {
-        if (copieTower == null && GameManager.GM.money >= 30)
+        int prix = g.GetComponentInChildren<TurretAI>().prix;
+        if (GameManager.GM.money >= prix)
         {
-            GameManager.GM.money -= 30;
-            copieTower = Instantiate(towerList[0]);
+            Destroy(copieTower);
+            GameManager.GM.money -= prix;
+            copieTower = Instantiate(g);
             copieTower.transform.position = transform.position;
-            copieTower.GetComponentInChildren<SphereCollider>().radius = towerList[0].GetComponentInChildren<TurretAI>().range;
+            copieTower.GetComponentInChildren<SphereCollider>().radius = g.GetComponentInChildren<TurretAI>().range;
         }
         else
         {
-            moneyError.SetActive(true); // Enable the text so it shows
-            print("pas assez d'argent");
-            delay();
-            moneyError.SetActive(false); // Disable the text so it shows
+            StartCoroutine(delayMoney());
         }
-        c.enabled = false;
+        achat.SetActive(false);
+        upgrade.SetActive(false);
     }
 
-    public void PlaceCanon()
+    public void upgradeTour()
     {
-        if (copieTower == null && GameManager.GM.money >= 50)
-        {
-            GameManager.GM.money -= 50;
-            copieTower = Instantiate(towerList[1]);
-            copieTower.transform.position = transform.position;
-            copieTower.GetComponentInChildren<SphereCollider>().radius = towerList[0].GetComponentInChildren<TurretAI>().range;
-        }
-        c.enabled = false;
+        PlaceTour(copieTower.GetComponentInChildren<TurretAI>().nextRank);
     }
 
     IEnumerator delay()
     {
         yield return new WaitForSeconds(5);
+        achat.SetActive(false);
+        upgrade.SetActive(false);
+
+    }
+
+    IEnumerator delayMoney()
+    {
+        moneyError.SetActive(true); // Enable the text so it shows
+        print("pas assez d'argent");
+        yield return new WaitForSeconds(2);
+        moneyError.SetActive(false); // Disable the text so it shows
     }
 }

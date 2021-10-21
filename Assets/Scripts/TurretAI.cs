@@ -12,14 +12,18 @@ public class TurretAI : MonoBehaviour
     public int peircing;
 
     int level = 0;
+    int levelMax = 2;
     int xp = 0;
     int xpmax = 20;
+
+    public int prix;
 
     public List<GameObject> ciblePossible = new List<GameObject>();
 
     GameObject cible;
     
     public GameObject balle;
+    public GameObject nextRank;
 
     // Start is called before the first frame update
     void Start()
@@ -64,7 +68,7 @@ public class TurretAI : MonoBehaviour
     public void addXP(int i)
     {
         xp += i;
-        if (xp == xpmax)
+        if (xp == xpmax && level < levelMax)
         {
             level++;
             xpmax *= 2;
@@ -81,5 +85,20 @@ public class TurretAI : MonoBehaviour
             + "Dégats : " + dmg + "\n" 
             + "Vitesse d'attaque : " + atkSpd;
         return res;
+    }
+
+
+    public void OnMouseDown()
+    {
+        
+    }
+
+    public void RankUp()
+    {
+
+        if(level == levelMax)
+        {
+            
+        }
     }
 }
