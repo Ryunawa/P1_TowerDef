@@ -11,8 +11,8 @@ public class TurretAI : MonoBehaviour
     public float dmg;
     public int peircing;
 
-    int level = 0;
-    int levelMax = 4;
+    public int level = 0;
+    public int levelMax = 4;
     int xp = 0;
     int xpmax = 20;
 
@@ -29,6 +29,10 @@ public class TurretAI : MonoBehaviour
     void Start()
     {
         lastShot = Time.time;
+        foreach(Collider c in Physics.OverlapSphere(transform.position, range,1<<7))
+        {
+            ciblePossible.Add(c.gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -71,8 +75,8 @@ public class TurretAI : MonoBehaviour
         if (xp >= xpmax && level < levelMax)
         {
             level++;
+            xp -= xpmax;
             xpmax *= 2;
-            xp -= xmpax;
             atkSpd /= 1.01f;
             dmg *= 1.1f;
         }

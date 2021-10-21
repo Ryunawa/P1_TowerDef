@@ -7,7 +7,9 @@ public class TowerPlacement : MonoBehaviour
 {
     public List<GameObject> basicTowers;
     GameObject copieTower;
+    TurretAI turretScript;
     public GameObject moneyError;
+    public GameObject xpError;
     public GameObject achat;
     public GameObject upgrade;
 
@@ -38,7 +40,9 @@ public class TowerPlacement : MonoBehaviour
         }
         else
         {
-            upgrade.GetComponentInChildren<TextMeshProUGUI>().text = copieTower.GetComponentInChildren<TurretAI>().nextRank.GetComponentInChildren<TurretAI>().prix.ToString();
+            if(copieTower.name.Contains("T3"))
+                return;
+            upgrade.GetComponentInChildren<TextMeshProUGUI>().text = turretScript.nextRank.GetComponentInChildren<TurretAI>().prix.ToString();
             upgrade.SetActive(true);
         }
         StartCoroutine(delay());
@@ -61,7 +65,8 @@ public class TowerPlacement : MonoBehaviour
             GameManager.GM.money -= prix;
             copieTower = Instantiate(g);
             copieTower.transform.position = transform.position;
-            copieTower.GetComponentInChildren<SphereCollider>().radius = g.GetComponentInChildren<TurretAI>().range;
+            turretScript = copieTower.GetComponentInChildren<TurretAI>();
+            copieTower.GetComponentInChildren<SphereCollider>().radius = turretScript.range;
         }
         else
         {
@@ -72,8 +77,13 @@ public class TowerPlacement : MonoBehaviour
     }
 
     public void upgradeTour()
-    {
-        PlaceTour(copieTower.GetComponentInChildren<TurretAI>().nextRank);
+    {        
+        if(turretScript.level<turretScript.levelMax)
+        {
+            StartCoroutine(delayXP());
+            return;
+        }
+        PlaceTour(turretScript.nextRank);
     }
 
     IEnumerator delay()
@@ -81,14 +91,22 @@ public class TowerPlacement : MonoBehaviour
         yield return new WaitForSeconds(5);
         achat.SetActive(false);
         upgrade.SetActive(false);
-
     }
 
     IEnumerator delayMoney()
     {
         moneyError.SetActive(true); // Enable the text so it shows
-        print("pas assez d'argent");
+        print("saucisse");
         yield return new WaitForSeconds(2);
         moneyError.SetActive(false); // Disable the text so it shows
     }
+    IEnumerator delayXP()
+    {
+        xpError.SetActive(true); // Enable the text so it shows
+        print("jambon");
+        yield return new WaitForSeconds(2);
+        xpError.SetActive(false); // Disable the text so it shows
+    }
+
+    
 }

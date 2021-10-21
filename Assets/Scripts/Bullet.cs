@@ -43,15 +43,12 @@ public class Bullet : MonoBehaviour
             case 2: // projectile qui explose
                 Instantiate(part); // crée l'effet d'explosion, il se détruit tout seul.
                 part.transform.position = transform.position;
-                CiblePossible = Physics.OverlapSphere(transform.position, rayon); //récupère tous les colliders dans son rayon 
+                CiblePossible = Physics.OverlapSphere(transform.position, rayon,1<<7); //récupère tous les colliders  ennemis dans son rayon 
                 foreach (Collider c in CiblePossible)
-                {
-                    if (c.CompareTag("Ennemi")) //fait des dégats à tous ce qui est un ennemi
-                    {
-                        c.GetComponent<EnemyBehaviour>().DealtDamage(dmg);
-                        if (parentTower != null)
-                            parentScript.addXP(1);
-                    }
+                {                   
+                    c.GetComponent<EnemyBehaviour>().DealtDamage(dmg);
+                    if (parentTower != null)
+                       parentScript.addXP(1);
                 }
                 Destroy(gameObject);
                 break;
