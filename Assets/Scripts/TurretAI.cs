@@ -40,65 +40,51 @@ public class TurretAI : MonoBehaviour
         Vector3 dir;
         float currTime = Time.time;
 
-        while (ciblePossible.Count > 0 && ciblePossible[0] == null)
+        while (ciblePossible.Count > 0 && ciblePossible[0] == null) //enlève les cibles détruites
             ciblePossible.RemoveAt(0);
 
-        if (ciblePossible.Count == 0)
+        if (ciblePossible.Count == 0) // quitte si aucune si à portée
             return;
 
         cible = ciblePossible[0];
-        transform.LookAt(new Vector3(cible.transform.position.x, transform.position.y, cible.transform.position.z));
+        transform.LookAt(new Vector3(cible.transform.position.x, transform.position.y, cible.transform.position.z)); //tourne la tour vers sa cible
         
-        if (currTime - lastShot > atkSpd)
+        if (currTime - lastShot > atkSpd) // tir si suffisement de temps est passé depuis le dernier
         {
             lastShot = currTime;
-            b = Instantiate(balle, transform.position, transform.rotation);
+            b = Instantiate(balle, transform.position, transform.rotation); // crée le projectile et lui assigne ses variables
             composant = b.GetComponent<Bullet>();
             composant.dmg = dmg;
             composant.parentTower = gameObject;
             composant.peircing = peircing;
             b.transform.Translate(new Vector3(0, 0.3f, 0));
             b.transform.LookAt(cible.transform.position);
-            dir = (cible.transform.position - b.transform.position).normalized;
+            dir = (cible.transform.position - b.transform.position).normalized; //tir le projectile vers sa cible
             b.GetComponent<Rigidbody>().AddForce(dir * shotSpd);
-            Destroy(b, 1);
+            Destroy(b, 1); // détruit le projetile dans 1s pour éviter de remplir la mémoire
         }
     }
 
-    public void addXP(int i)
+    public void addXP(int i) //gagne de l'xp et éventuellement monte de niveau
     {
         xp += i;
-        if (xp == xpmax && level < levelMax)
+        if (xp >= xpmax && level < levelMax)
         {
             level++;
             xpmax *= 2;
-            xp = 0;
+            xp -= xmpax;
             atkSpd /= 1.01f;
             dmg *= 1.1f;
         }
     }
 
-    public string getStats()
+    public string getStats() //renvoie un string des stats de la tour, utilisé pour debugger
     {
         string res = "Niveau : " + level + "\n"
             + "XP : "+ xp + "\n"
-            + "D�gats : " + dmg + "\n" 
+            + "D�gats : " + dmg + "\n" 
             + "Vitesse d'attaque : " + atkSpd;
         return res;
     }
 
-
-    public void OnMouseDown()
-    {
-        
-    }
-
-    public void RankUp()
-    {
-
-        if(level == levelMax)
-        {
-            
-        }
-    }
 }
