@@ -32,7 +32,7 @@ public class Bullet : MonoBehaviour
         GameObject touche = other.gameObject;
         switch (type)
         {
-            case 1:
+            case 1: // projectile qui peut traverser
                 if (touche.CompareTag("Ennemi"))
                 {
                     touche.GetComponent<EnemyBehaviour>().DealtDamage(dmg);
@@ -40,16 +40,14 @@ public class Bullet : MonoBehaviour
                         parentScript.addXP(1);
                 }
                 break;
-
-            case 2:
-                Instantiate(part);
+            case 2: // projectile qui explose
+                Instantiate(part); // crée l'effet d'explosion, il se détruit tout seul.
                 part.transform.position = transform.position;
-                CiblePossible = Physics.OverlapSphere(transform.position, rayon);
+                CiblePossible = Physics.OverlapSphere(transform.position, rayon); //récupère tous les colliders dans son rayon 
                 foreach (Collider c in CiblePossible)
                 {
-                    if (c.CompareTag("Ennemi"))
+                    if (c.CompareTag("Ennemi")) //fait des dégats à tous ce qui est un ennemi
                     {
-
                         c.GetComponent<EnemyBehaviour>().DealtDamage(dmg);
                         if (parentTower != null)
                             parentScript.addXP(1);
@@ -61,7 +59,7 @@ public class Bullet : MonoBehaviour
                 break;
         }
         peircing--;
-        if (peircing <= 0 || !touche.CompareTag("Ennemi"))
+        if (peircing <= 0 || !touche.CompareTag("Ennemi")) //se détruit si à finis de percer ou touche autre chose qu'un ennemi
         {
             Destroy(gameObject);
         }
