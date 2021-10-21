@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
             GM = this;
         }
         money = 50;
-        DontDestroyOnLoad(this);
     }
 
     // Start is called before the first frame update
@@ -38,8 +37,30 @@ public class GameManager : MonoBehaviour
         
     }
 
+// MainMenu buttons
+    public void PlayGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void LoadLevel1()
+    {
+        SceneManager.LoadScene("Lv1", LoadSceneMode.Single);
+    }
+    public void LoadLevel2()
+    {
+        SceneManager.LoadScene("Lv2", LoadSceneMode.Single);
+    }
+
+    public void QuitGame()
+    {
+        print("QUIT");
+        Application.Quit();
+    }
+
+
 // Winning and loosing conditions
-    public void MenuEndGame()
+public void MenuEndGame()
     {
         if (Base.hpBase == 0)
         {
@@ -88,5 +109,14 @@ public class GameManager : MonoBehaviour
     {
         print("QUIT");
         Application.Quit();
+    }
+
+    public void Menu()
+    {
+        Spawning.waveCount = 0;
+        Base.hpBase = 10;
+        Time.timeScale = 1;
+
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 }

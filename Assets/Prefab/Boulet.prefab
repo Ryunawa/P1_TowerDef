@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 0
   parentTower: {fileID: 0}
-  type: 1
+  type: 2
   rayon: 1
   peircing: 0
   part: {fileID: 5507954068403275570, guid: 65229a37cc3b2e842b74860e59de2c13, type: 3}
