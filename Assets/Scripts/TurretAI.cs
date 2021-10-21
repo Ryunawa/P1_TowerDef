@@ -12,7 +12,7 @@ public class TurretAI : MonoBehaviour
     public int peircing;
 
     int level = 0;
-    int levelMax = 2;
+    int levelMax = 4;
     int xp = 0;
     int xpmax = 20;
 
