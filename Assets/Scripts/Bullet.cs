@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float dmg;
     public GameObject parentTower;
+    TurretAI parentScript;
     public int type;
     public float rayon = 1;
     public int peircing;
@@ -17,6 +18,7 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        parentScript = parentTower.GetComponent<TurretAI>();
     }
 
     // Update is called once per frame
@@ -33,10 +35,9 @@ public class Bullet : MonoBehaviour
             case 1:
                 if (touche.CompareTag("Ennemi"))
                 {
-
                     touche.GetComponent<EnemyBehaviour>().DealtDamage(dmg);
                     if (parentTower != null)
-                        parentTower.GetComponent<TurretAI>().addXP(1);
+                        parentScript.addXP(1);
                 }
                 break;
 
@@ -51,7 +52,7 @@ public class Bullet : MonoBehaviour
 
                         c.GetComponent<EnemyBehaviour>().DealtDamage(dmg);
                         if (parentTower != null)
-                            parentTower.GetComponent<TurretAI>().addXP(1);
+                            parentScript.addXP(1);
                     }
                 }
                 Destroy(gameObject);
