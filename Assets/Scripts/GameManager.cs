@@ -27,8 +27,14 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MenuWin.SetActive(false);
-        MenuLoose.SetActive(false);
+        if (MenuWin != null)
+        {
+            MenuWin.SetActive(false);
+        }
+        if (MenuLoose != null)
+        {
+            MenuLoose.SetActive(false);
+        }
     }
 
 // Update is called once per frame
