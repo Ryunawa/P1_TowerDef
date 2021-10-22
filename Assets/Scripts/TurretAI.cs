@@ -12,7 +12,7 @@ public class TurretAI : MonoBehaviour
     public int peircing;
 
     public int level = 0;
-    public int levelMax = 4;
+    public int levelMax = 3;
     int xp = 0;
     int xpmax = 20;
 
@@ -23,6 +23,7 @@ public class TurretAI : MonoBehaviour
     GameObject cible;
     
     public GameObject balle;
+    public GameObject soundEffect;
     public GameObject nextRank;
 
     // Start is called before the first frame update
@@ -55,6 +56,7 @@ public class TurretAI : MonoBehaviour
         
         if (currTime - lastShot > atkSpd) // tir si suffisement de temps est passé depuis le dernier
         {
+            Instantiate(soundEffect);
             lastShot = currTime;
             b = Instantiate(balle, transform.position, transform.rotation); // crée le projectile et lui assigne ses variables
             composant = b.GetComponent<Bullet>();

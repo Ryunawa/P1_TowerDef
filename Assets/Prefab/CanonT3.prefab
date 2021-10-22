@@ -15,9 +15,12 @@ MonoBehaviour:
   range: 5
   dmg: 15
   peircing: 0
+  level: 0
+  levelMax: 3
   prix: 200
   ciblePossible: []
   balle: {fileID: 1714582840137784027, guid: 8116f3313ea414a4a96b85ca0a29f09a, type: 3}
+  soundEffect: {fileID: 540324649797471395, guid: 95ed01f5acea27043a5a2168b703ad15, type: 3}
   nextRank: {fileID: 8329403211197141416}
 --- !u!1 &2322850441126458213
 GameObject:

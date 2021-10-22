@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DOUET_Robin_Vendeville_Thomas
+  companyName: DOUET_Robin_VENDEVILLE_Thomas
   productName: P1_TowerDef
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -153,7 +153,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.DOUETRobinVendevilleThomas.P1TowerDef
+    Standalone: com.DOUETRobinVENDEVILLEThomas.P1TowerDef
   buildNumber:
     Standalone: 0
     iPhone: 0

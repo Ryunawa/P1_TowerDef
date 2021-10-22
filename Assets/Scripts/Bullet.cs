@@ -41,7 +41,7 @@ public class Bullet : MonoBehaviour
                 }
                 break;
             case 2: // projectile qui explose
-                Instantiate(part); // crée l'effet d'explosion, il se détruit tout seul.
+                Instantiate(part,transform.position,transform.rotation); // crée l'effet d'explosion, il se détruit tout seul.
                 part.transform.position = transform.position;
                 CiblePossible = Physics.OverlapSphere(transform.position, rayon,1<<7); //récupère tous les colliders  ennemis dans son rayon 
                 foreach (Collider c in CiblePossible)
